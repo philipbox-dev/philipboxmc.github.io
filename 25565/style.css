@@ -1,0 +1,204 @@
+@font-face {
+    font-family: 'wingding';
+    src: url('./scripts/fonts/wingding.ttf') format('truetype'), font-family: 'petrucci';
+    src: url('./scripts/fonts/petrucci.ttf') format('truetype'), font-family: 'sewer';
+    src: url('./scripts/fonts/sewer.ttf') format('truetype'), font-family: 'seasrn';
+    src: url('./scripts/fonts/seasrn.ttf') format('truetype'), font-family: 'pacifico';
+    src: url('./scripts/fonts/pacifico.ttf') format('truetype'), font-family: 'japan';
+    src: url('./scripts/fonts/japan.ttf');
+}
+
+div {
+    font-family: seasrn;
+}
+
+body {
+    background-image: url("lo.png");
+}
+
+head {
+    cursor: url(/img/pointer1.svg?cb=1), url(/img/pointer1.svg?cb=1), move;
+}
+
+.led {
+    width: 11em;
+    padding-left: 3px;
+    padding-right: 3px;
+    height: 1em;
+    line-height: 150%;
+    padding: 0 3px 0 3px;
+    color: #999999;
+    text-align: left;
+    font-size: 90%;
+}
+
+.led div {
+    width: 1em;
+    height: 1em;
+    padding: 0 0 0 0;
+    border-radius: 1em;
+    border: solid 1px #999999;
+    float: left;
+    margin-right: 0.5em;
+    background: #e1e1e1;
+}
+
+.on {
+    color: #000000;
+}
+
+.on div {
+    background: #c4ff67 !important;
+}
+
+.red {
+    color: #000000;
+}
+
+.red div {
+    background: #e00000;
+}
+
+.green {
+    color: #000000;
+}
+
+.green div {
+    background: #6ada25;
+}
+
+.yellow {
+    color: #000000;
+}
+
+.yellow div {
+    background: #e6ff00;
+}
+
+.blue {
+    color: #000000;
+}
+
+.blue div {
+    background: #4b1fff;
+}
+
+.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+button {
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: url(/img/pointerbutton.svg?cb=1), url(/img/pointerbutton.svg?cb=1), move;
+    box-sizing: border-box;
+    margin: 0em;
+    padding: 1px 6px;
+    background-color: #bd770d border: none;
+    border-radius: 8px;
+    border-width: 2px;
+    border-image: initial;
+}
+
+html {
+    display: block;
+    cursor: url(/img/pointer1.svg?cb=1), url(/img/pointer1.svg?cb=1)), move;
+}1
+
+#logo {
+    background: url(http://192.168.1.18:3000/Philipboserver/icns/logo/logo.png?cb=1);
+    cursor: url(http://192.168.1.18:3000/Philipboserver/pointers/author.svg?cb=1), url(http://192.168.1.18:3000/Philipboserver/pointers/author.svg?cb=1), move;
+    width: 360px;
+    height: 90px;
+    text-indent: -9999px;
+}
+
+#logo2 {
+    background: url(http://192.168.1.18:3000/Philipboserver/icns/logo/zakazylogo.png?cb=1);
+    cursor: url(http://192.168.1.18:3000/Philipboserver/pointers/author.svg?cb=1), url(http://192.168.1.18:3000/Philipboserver/pointers/author.svg?cb=1), move;
+    width: 784px;
+    height: 222px;
+    text-indent: -9999px;
+}
+
+#container {
+    min-width: 700px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+ol {
+    border-radius: 2px;
+    ;
+}
