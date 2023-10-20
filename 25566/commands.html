@@ -1,1156 +1,889 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-    table { border-collapse:collapse; border-spacing:0; empty-cells:show }
-    td, th { vertical-align:top; font-size:12pt;}
-    h1, h2, h3, h4, h5, h6 { clear:both;}
-    ol, ul { margin:0; padding:0;}
-    li { list-style: none; margin:0; padding:0;}
-    span.footnodeNumber { padding-right:1em; }
-    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }
-    span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}
-    .Standard { font-size:12pt; font-family:'Liberation Serif'; writing-mode:horizontal-tb; direction:ltr;}
-    /* ODF styles with no properties representable as CSS:
-     { } */
-     .button {
-              background-color: #008CBA; /* Green */
-              border: none;
-              color: white;
-              padding: 15px 32px;
-              text-align: center;
-              text-decoration: none;
-              display: inline-block;
-              font-size: 16px;
-              margin: 4px 2px;
-              cursor: pointer;
-            }
-            html:not(#z) {
-    --color-ref-primary0: #000000ff;
-    --color-ref-primary10: #002107ff;
-    --color-ref-primary20: #003911ff;
-    --color-ref-primary25: #054518ff;
-    --color-ref-primary30: #165123ff;
-    --color-ref-primary40: #306a38ff;
-    --color-ref-primary50: #4a844fff;
-    --color-ref-primary60: #639e67ff;
-    --color-ref-primary70: #7db97fff;
-    --color-ref-primary80: #97d599ff;
-    --color-ref-primary90: #b2f2b3ff;
-    --color-ref-primary95: #c6ffc5ff;
-    --color-ref-primary99: #f6fff1ff;
-    --color-ref-primary100: #ffffffff;
-    --color-ref-secondary0: #000000ff;
-    --color-ref-secondary10: #0f1f10ff;
-    --color-ref-secondary15: #1a291aff;
-    --color-ref-secondary20: #243424ff;
-    --color-ref-secondary25: #2f3f2fff;
-    --color-ref-secondary30: #3a4b39ff;
-    --color-ref-secondary35: #465745ff;
-    --color-ref-secondary40: #516350ff;
-    --color-ref-secondary50: #6a7c68ff;
-    --color-ref-secondary60: #839681ff;
-    --color-ref-secondary70: #9db09aff;
-    --color-ref-secondary80: #b8ccb5ff;
-    --color-ref-secondary90: #d4e8d0ff;
-    --color-ref-secondary95: #e2f6deff;
-    --color-ref-secondary99: #f6fff1ff;
-    --color-ref-secondary100: #ffffffff;
-    --color-ref-tertiary0: #000000ff;
-    --color-ref-tertiary10: #001f24ff;
-    --color-ref-tertiary20: #00363cff;
-    --color-ref-tertiary30: #1f4d54ff;
-    --color-ref-tertiary40: #39656cff;
-    --color-ref-tertiary50: #527e85ff;
-    --color-ref-tertiary60: #6c989fff;
-    --color-ref-tertiary70: #86b3baff;
-    --color-ref-tertiary80: #a1ced6ff;
-    --color-ref-tertiary90: #bcebf2ff;
-    --color-ref-tertiary95: #cff8ffff;
-    --color-ref-tertiary99: #f6feffff;
-    --color-ref-tertiary100: #ffffffff;
-    --color-ref-error0: #000000ff;
-    --color-ref-error10: #410002ff;
-    --color-ref-error20: #690005ff;
-    --color-ref-error30: #93000aff;
-    --color-ref-error40: #ba1a1aff;
-    --color-ref-error50: #de3730ff;
-    --color-ref-error60: #ff5449ff;
-    --color-ref-error70: #ff897dff;
-    --color-ref-error80: #ffb4abff;
-    --color-ref-error90: #ffdad6ff;
-    --color-ref-error95: #ffedeaff;
-    --color-ref-error99: #fffbffff;
-    --color-ref-error100: #ffffffff;
-    --color-ref-neutral0: #000000ff;
-    --color-ref-neutral4: #0b0f0bff;
-    --color-ref-neutral6: #101510ff;
-    --color-ref-neutral10: #181d18ff;
-    --color-ref-neutral12: #1c211cff;
-    --color-ref-neutral15: #222722ff;
-    --color-ref-neutral17: #272b26ff;
-    --color-ref-neutral20: #2d322cff;
-    --color-ref-neutral22: #313630ff;
-    --color-ref-neutral24: #363a35ff;
-    --color-ref-neutral25: #383d37ff;
-    --color-ref-neutral30: #434842ff;
-    --color-ref-neutral40: #5b6059ff;
-    --color-ref-neutral50: #747871ff;
-    --color-ref-neutral60: #8e928bff;
-    --color-ref-neutral70: #a8ada5ff;
-    --color-ref-neutral80: #c4c8c0ff;
-    --color-ref-neutral87: #d7dbd3ff;
-    --color-ref-neutral90: #e0e4dbff;
-    --color-ref-neutral92: #e6e9e1ff;
-    --color-ref-neutral94: #ebefe6ff;
-    --color-ref-neutral95: #eef2e9ff;
-    --color-ref-neutral96: #f1f5ecff;
-    --color-ref-neutral98: #f7fbf2ff;
-    --color-ref-neutral99: #fafef5ff;
-    --color-ref-neutral100: #ffffffff;
-    --color-ref-neutral-variant0: #000000ff;
-    --color-ref-neutral-variant10: #171d16ff;
-    --color-ref-neutral-variant15: #212720ff;
-    --color-ref-neutral-variant20: #2b322aff;
-    --color-ref-neutral-variant30: #424940ff;
-    --color-ref-neutral-variant40: #596057ff;
-    --color-ref-neutral-variant50: #72796fff;
-    --color-ref-neutral-variant60: #8c9389ff;
-    --color-ref-neutral-variant70: #a6ada3ff;
-    --color-ref-neutral-variant80: #c2c9bdff;
-    --color-ref-neutral-variant90: #dee5d9ff;
-    --color-ref-neutral-variant95: #ecf3e7ff;
-    --color-ref-neutral-variant99: #f8fef2ff;
-    --color-ref-neutral-variant100: #ffffffff;
-    --color-sys-on-primary: #ffffffff;
-    --color-sys-on-primary-container: #002107ff;
-    --color-sys-primary: #306a38ff;
-    --color-sys-primary-container: #b2f2b3ff;
-    --color-sys-on-secondary: #ffffffff;
-    --color-sys-on-secondary-container: #0f1f10ff;
-    --color-sys-secondary: #516350ff;
-    --color-sys-secondary-container: #d4e8d0ff;
-    --color-sys-on-tertiary: #ffffffff;
-    --color-sys-on-tertiary-container: #001f24ff;
-    --color-sys-tertiary: #39656cff;
-    --color-sys-tertiary-container: #bcebf2ff;
-    --color-sys-error: #ba1a1aff;
-    --color-sys-error-container: #ffdad6ff;
-    --color-sys-on-error: #ffffffff;
-    --color-sys-on-error-container: #410002ff;
-    --color-sys-on-surface: #181d18ff;
-    --color-sys-on-surface-variant: #424940ff;
-    --color-sys-outline: #72796fff;
-    --color-sys-surface-variant: #dee5d9ff;
-    --color-sys-inverse-primary: #97d599ff;
-    --color-sys-inverse-on-surface: #eef2e9ff;
-    --color-sys-surface: #ffffffff;
-    --color-sys-surface1: #f0f7ecff;
-    --color-sys-surface2: #eaf2e6ff;
-    --color-sys-surface3: #e4eee0ff;
-    --color-sys-surface4: #e2eddfff;
-    --color-sys-surface5: #deeadbff;
-    --color-sys-on-surface-secondary: #3a4b39ff;
-    --color-sys-on-surface-subtle: #434842ff;
-    --color-sys-on-surface-primary: #002107ff;
-    --color-sys-on-surface-primary-inactive: #181d18ff;
-    --color-sys-tonal-container: #b2f2b3ff;
-    --color-sys-on-tonal-container: #002107ff;
-    --color-sys-tonal-outline: #97d599ff;
-    --color-sys-neutral-outline: #c4c8c0ff;
-    --color-sys-neutral-container: #f0f7ecff;
-    --color-sys-divider: #b2f2b3ff;
-    --color-sys-base: #fafef5ff;
-    --color-sys-base-container: #e2eddfff;
-    --color-sys-base-container-elevated: #fafef5ff;
-    --color-sys-on-base-secondary: #434842ff;
-    --color-sys-on-base-divider: #b2f2b3ff;
-    --color-sys-header: #d4e8d0ff;
-    --color-sys-header-inactive: #e4eee0ff;
-    --color-sys-header-container: #c6ffc5ff;
-    --color-sys-header-container-inactive: #fafef5ff;
-    --color-sys-on-header-divider: #97d599ff;
-    --color-sys-on-header-divider-inactive: #c4c8c0ff;
-    --color-sys-on-header-primary: #306a38ff;
-    --color-sys-on-header-primary-inactive: #5b6059ff;
-    --color-sys-state-hover-on-prominent: #fafef51a;
-    --color-sys-state-hover-on-subtle: #181d180f;
-    --color-sys-state-ripple-neutral-on-prominent: #fafef529;
-    --color-sys-state-ripple-neutral-on-subtle: #181d1814;
-    --color-sys-state-ripple-primary: #7db97f52;
-    --color-sys-state-focus-ring: #306a38ff;
-    --color-sys-state-focus-highlight: #181d180f;
-    --color-sys-state-disabled: #181d1860;
-    --color-sys-state-disabled-container: #181d181e;
-    --color-sys-state-hover-cutout: #2d322c1f;
-    --color-sys-state-hover-inverse-cutout: #181d180f;
-    --color-sys-state-on-header-hover: #003911ff;
-    --color-sys-state-header-hover: #97d599ff;
-    --color-sys-state-hover-dim-blend-protection: #0039112e;
-    --color-sys-state-hover-bright-blend-protection: #181d180f;
-    --color-sys-shadow: #000000ff;
-    --color-sys-omnibox-container: #e2eddfff;
-    --color-sys-on-base: #181d18ff;
-    --color-sys-on-base-border: #b2f2b3ff;
-    --color-sys-state-hover: #181d1814;
-    --color-sys-state-focus: #181d181e;
-    --color-sys-state-pressed: #181d181e;
-    --color-sys-state-drag: #181d1829;
-    --color-accent: #1a73e8ff;
-    --color-accent-with-guaranteed-contrast-atop-primary-background: #1a73e8ff;
-    --color-alert-high-severity: #d93025ff;
-    --color-alert-low-severity: #188038ff;
-    --color-alert-medium-severity-icon: #f29900ff;
-    --color-alert-medium-severity-text: #b06000ff;
-    --color-disabled-foreground: #5f6368ff;
-    --color-endpoint-background: #ffffffff;
-    --color-endpoint-foreground: #202124ff;
-    --color-item-highlight: #1a73e8ff;
-    --color-item-selection-background: #c9defaff;
-    --color-menu-selection-background: #e8e8e9ff;
-    --color-midground: #dadce0ff;
-    --color-primary-background: #ffffffff;
-    --color-primary-foreground: #202124ff;
-    --color-secondary-foreground: #5f6368ff;
-    --color-subtle-accent: #bfd8f9ff;
-    --color-subtle-emphasis-background: #f2f2f2ff;
-    --color-text-selection-background: #9cc3f5ff;
-    --color-text-selection-foreground: #202124ff;
-    --color-avatar-header-art: #dadce0ff;
-    --color-avatar-icon-guest: #5f6368ff;
-    --color-avatar-icon-incognito: #202124ff;
-    --color-badge-background: #1a73e8ff;
-    --color-badge-foreground: #ffffffff;
-    --color-badge-in-cocoa-menu-background: #1a73e8ff;
-    --color-badge-in-cocoa-menu-foreground: #ffffffff;
-    --color-bubble-background: #ffffffff;
-    --color-bubble-border: #dadce0ff;
-    --color-bubble-border-shadow-large: #3c40431a;
-    --color-bubble-border-shadow-small: #3c404333;
-    --color-bubble-border-when-shadow-present: #00000026;
-    --color-bubble-footer-background: #f2f2f2ff;
-    --color-bubble-footer-border: #dadce0ff;
-    --color-button-background: #ffffffff;
-    --color-button-background-pressed: #ffffffff;
-    --color-button-background-prominent: #1a73e8ff;
-    --color-button-background-prominent-disabled: #f2f2f2ff;
-    --color-button-background-prominent-focused: #1a73e8ff;
-    --color-button-background-tonal: #b2f2b3ff;
-    --color-button-background-tonal-disabled: #f2f2f2ff;
-    --color-button-background-tonal-focused: #b2f2b3ff;
-    --color-button-border: #dadce0ff;
-    --color-button-border-disabled: #f2f2f2ff;
-    --color-button-foreground: #1a73e8ff;
-    --color-button-foreground-disabled: #5f6368ff;
-    --color-button-foreground-prominent: #ffffffff;
-    --color-button-foreground-tonal: #002107ff;
-    --color-button-hover-background-text: #181d180f;
-    --color-multitask-menu-nudge-pulse: #ff0000ff;
-    --color-checkbox-background-disabled: #ff0000ff;
-    --color-checkbox-foreground-checked: #1a73e8ff;
-    --color-checkbox-foreground-disabled: #ff0000ff;
-    --color-checkbox-foreground-unchecked: #5f6368ff;
-    --color-combobox-background: #ff0000ff;
-    --color-combobox-background-disabled: #ff0000ff;
-    --color-combobox-container-outline: #ff0000ff;
-    --color-combobox-ink-drop-hovered: #ff0000ff;
-    --color-combobox-ink-drop-ripple: #ff0000ff;
-    --color-custom-frame-caption-foreground: #ffffffff;
-    --color-debug-bounds-outline: #ff000030;
-    --color-debug-content-outline: #0000ff30;
-    --color-dialog-background: #ffffffff;
-    --color-dialog-foreground: #5f6368ff;
-    --color-dropdown-background: #ffffffff;
-    --color-dropdown-background-selected: #e8e8e9ff;
-    --color-dropdown-foreground: #202124ff;
-    --color-dropdown-foreground-selected: #202124ff;
-    --color-focusable-border-focused: #1a73e8ff;
-    --color-focusable-border-unfocused: #dadce0ff;
-    --color-frame-active: #86b788ff;
-    --color-frame-active-unthemed: #dee1e6ff;
-    --color-frame-inactive: #86b788ff;
-    --color-help-icon-active: #202124ff;
-    --color-help-icon-inactive: #5f6368ff;
-    --color-icon: #5f6368ff;
-    --color-icon-disabled: #5f636861;
-    --color-icon-secondary: #80868bff;
-    --color-info-bar-icon: #1a73e8ff;
-    --color-label-foreground: #202124ff;
-    --color-label-foreground-disabled: #5f6368ff;
-    --color-label-foreground-secondary: #5f6368ff;
-    --color-label-selection-background: #9cc3f5ff;
-    --color-label-selection-foreground: #202124ff;
-    --color-link-foreground: #1a73e8ff;
-    --color-link-foreground-disabled: #5f6368ff;
-    --color-link-foreground-pressed: #1a73e8ff;
-    --color-list-item-folder-icon-background: #ff0000ff;
-    --color-list-item-folder-icon-foreground: #ff0000ff;
-    --color-list-item-url-favicon-background: #ff0000ff;
-    --color-live-caption-bubble-background-default: #202124e6;
-    --color-live-caption-bubble-button-icon: #bdbdbeff;
-    --color-live-caption-bubble-button-icon-disabled: #bdbdbe61;
-    --color-live-caption-bubble-foreground-default: #ffffffff;
-    --color-live-caption-bubble-foreground-secondary: #9aa0a6ff;
-    --color-live-caption-bubble-checkbox: #8ab4f8ff;
-    --color-live-caption-bubble-link: #8ab4f8ff;
-    --color-menu-background: #ffffffff;
-    --color-menu-border: #dadce0ff;
-    --color-menu-dropmarker: #202124ff;
-    --color-menu-icon: #5f6368ff;
-    --color-menu-item-background-alerted-initial: #1a73e84d;
-    --color-menu-item-background-alerted-target: #1a73e81a;
-    --color-menu-item-background-highlighted: #f2f2f2ff;
-    --color-menu-item-background-selected: #e8e8e9ff;
-    --color-menu-item-foreground: #202124ff;
-    --color-menu-item-foreground-disabled: #5f6368ff;
-    --color-menu-item-foreground-highlighted: #202124ff;
-    --color-menu-item-foreground-secondary: #5f6368ff;
-    --color-menu-item-foreground-selected: #202124ff;
-    --color-menu-separator: #dadce0ff;
-    --color-notification-actions-background: #f2f2f2ff;
-    --color-notification-background-active: #f2f2f2ff;
-    --color-notification-background-inactive: #ffffffff;
-    --color-notification-header-foreground: #5f6368ff;
-    --color-notification-icon-background: #5f6368ff;
-    --color-notification-icon-foreground: #ffffffff;
-    --color-notification-image-background: #f2f2f2ff;
-    --color-notification-input-background: #1a73e8ff;
-    --color-notification-input-foreground: #ffffffff;
-    --color-notification-input-placeholder-foreground: #ffffffb5;
-    --color-overlay-scrollbar-fill: #202124b5;
-    --color-overlay-scrollbar-fill-dark: #202124b5;
-    --color-overlay-scrollbar-fill-light: #ffffffb5;
-    --color-overlay-scrollbar-fill-hovered: #202124db;
-    --color-overlay-scrollbar-fill-hovered-dark: #202124db;
-    --color-overlay-scrollbar-fill-hovered-light: #ffffffdb;
-    --color-overlay-scrollbar-stroke: #ffffff47;
-    --color-overlay-scrollbar-stroke-dark: #ffffff47;
-    --color-overlay-scrollbar-stroke-light: #20212447;
-    --color-overlay-scrollbar-stroke-hovered: #ffffff6e;
-    --color-overlay-scrollbar-stroke-hovered-dark: #ffffff6e;
-    --color-overlay-scrollbar-stroke-hovered-light: #2021246e;
-    --color-progress-bar: #1a73e8ff;
-    --color-progress-bar-paused: #5f6368ff;
-    --color-radio-button-foreground-unchecked: #5f6368ff;
-    --color-radio-button-foreground-disabled: #ff0000ff;
-    --color-radio-button-foreground-checked: #1a73e8ff;
-    --color-scrollbar-arrow-background-hovered: #d2d2d2ff;
-    --color-scrollbar-arrow-background-pressed: #787878ff;
-    --color-scrollbar-arrow-foreground: #505050ff;
-    --color-scrollbar-arrow-foreground-pressed: #ffffffff;
-    --color-scrollbar-corner: #dcdcdcff;
-    --color-scrollbar-thumb: #00000033;
-    --color-scrollbar-thumb-hovered: #0000004d;
-    --color-scrollbar-thumb-inactive: #eaeaeaff;
-    --color-scrollbar-thumb-pressed: #00000080;
-    --color-scrollbar-track: #f1f1f1ff;
-    --color-separator: #dadce0ff;
-    --color-shadow-base: #3c4043ff;
-    --color-shadow-value-ambient-shadow-elevation-sixteen: #3c40433d;
-    --color-shadow-value-ambient-shadow-elevation-three: #3c404340;
-    --color-shadow-value-key-shadow-elevation-sixteen: #3c40431a;
-    --color-shadow-value-key-shadow-elevation-three: #3c404366;
-    --color-side-panel-combobox-border: #00000000;
-    --color-side-panel-combobox-background: #ffffffff;
-    --color-slider-thumb: #1a73e8ff;
-    --color-slider-thumb-minimal: #5f6368ff;
-    --color-slider-track: #bfd8f9ff;
-    --color-slider-track-minimal: #dadce0ff;
-    --color-sync-info-background: #f2f2f2ff;
-    --color-sync-info-background-error: #d930250f;
-    --color-sync-info-background-paused: #1a73e80f;
-    --color-tab-background-highlighted: #185abc2b;
-    --color-tab-background-highlighted-focused: #185abc53;
-    --color-tab-border-selected: #1a73e8ff;
-    --color-tab-content-separator: #dadce0ff;
-    --color-tab-foreground: #5f6368ff;
-    --color-tab-foreground-selected: #1a73e8ff;
-    --color-table-background: #ffffffff;
-    --color-table-background-alternate: #ffffffff;
-    --color-table-background-selected-focused: #c9defaff;
-    --color-table-background-selected-unfocused: #c9defaff;
-    --color-table-foreground: #202124ff;
-    --color-table-foreground-selected-focused: #202124ff;
-    --color-table-foreground-selected-unfocused: #202124ff;
-    --color-table-grouping-indicator: #1a73e8ff;
-    --color-table-header-background: #ffffffff;
-    --color-table-header-foreground: #202124ff;
-    --color-table-header-separator: #dadce0ff;
-    --color-suggestion-chip-border: #ff0000ff;
-    --color-suggestion-chip-icon: #ff0000ff;
-    --color-textfield-background: #ffffffff;
-    --color-textfield-background-disabled: #ffffffff;
-    --color-textfield-foreground: #202124ff;
-    --color-textfield-foreground-disabled: #5f6368ff;
-    --color-textfield-foreground-placeholder-invalid: #5f6368ff;
-    --color-textfield-foreground-placeholder: #5f6368ff;
-    --color-textfield-selection-background: #9cc3f5ff;
-    --color-textfield-selection-foreground: #202124ff;
-    --color-textfield-outline: #dadce0ff;
-    --color-textfield-disabled-outline: #dadce0ff;
-    --color-textfield-invalid-outline: #d93025ff;
-    --color-throbber: #1a73e8ff;
-    --color-throbber-preconnect: #bfd8f9ff;
-    --color-toggle-button-hover: #ff0000ff;
-    --color-toggle-button-pressed: #ff0000ff;
-    --color-toggle-button-shadow: #dadce0ff;
-    --color-toggle-button-thumb-off: #5f6368ff;
-    --color-toggle-button-thumb-off-disabled: #ff0000ff;
-    --color-toggle-button-thumb-on: #1a73e8ff;
-    --color-toggle-button-thumb-on-disabled: #ff0000ff;
-    --color-toggle-button-thumb-on-hover: #ff0000ff;
-    --color-toggle-button-track-off: #dadce0ff;
-    --color-toggle-button-track-off-disabled: #ff0000ff;
-    --color-toggle-button-track-on: #8ab4f8ff;
-    --color-toggle-button-track-on-disabled: #ff0000ff;
-    --color-toolbar-search-field-background: #ff0000ff;
-    --color-toolbar-search-field-background-hover: #ff0000ff;
-    --color-toolbar-search-field-background-pressed: #ff0000ff;
-    --color-toolbar-search-field-foreground: #ff0000ff;
-    --color-toolbar-search-field-foreground-placeholder: #ff0000ff;
-    --color-toolbar-search-field-icon: #ff0000ff;
-    --color-tooltip-background: #ffffffff;
-    --color-tooltip-foreground: #3d3e40ff;
-    --color-tree-background: #ffffffff;
-    --color-tree-node-background-selected-focused: #c9defaff;
-    --color-tree-node-background-selected-unfocused: #c9defaff;
-    --color-tree-node-foreground: #202124ff;
-    --color-tree-node-foreground-selected-focused: #202124ff;
-    --color-tree-node-foreground-selected-unfocused: #202124ff;
-    --color-window-background: #ffffffff;
-    --color-native-button-border: #ff0000ff;
-    --color-native-header-button-border-active: #ff0000ff;
-    --color-native-header-button-border-inactive: #ff0000ff;
-    --color-native-header-separator-border-active: #ff0000ff;
-    --color-native-header-separator-border-inactive: #ff0000ff;
-    --color-native-label-foreground: #ff0000ff;
-    --color-native-tab-foreground-inactive-frame-active: #ff0000ff;
-    --color-native-tab-foreground-inactive-frame-inactive: #ff0000ff;
-    --color-native-textfield-border-unfocused: #ff0000ff;
-    --color-native-toolbar-background: #ff0000ff;
-    --color-app-menu-highlight-severity-low: #202124ff;
-    --color-app-menu-highlight-severity-high: #a50e0eff;
-    --color-app-menu-highlight-severity-medium: #202124ff;
-    --color-avatar-button-highlight-normal: #174ea6ff;
-    --color-avatar-button-highlight-sync-error: #a50e0eff;
-    --color-avatar-button-highlight-sync-paused: #174ea6ff;
-    --color-avatar-stroke-light: #ffffffff;
-    --color-bookmark-bar-background: #c9dfcaff;
-    --color-bookmark-bar-foreground: #202124ff;
-    --color-bookmark-bar-separator: #2021244d;
-    --color-bookmark-button-icon: #202124ff;
-    --color-bookmark-drag-image-background: #1a73e8ff;
-    --color-bookmark-drag-image-count-background: #d93025ff;
-    --color-bookmark-drag-image-count-foreground: #ffffffff;
-    --color-bookmark-drag-image-foreground: #ffffffff;
-    --color-bookmark-drag-image-icon-background: #ffffffff;
-    --color-bookmark-favicon: #202124ff;
-    --color-bookmark-folder-icon: #626365ff;
-    --color-caption-button-background: #00000000;
-    --color-captured-tab-contents-border: #1a73e8ff;
-    --color-desktop-media-tab-list-border: #dadce0ff;
-    --color-desktop-media-tab-list-preview-background: #dadce0ff;
-    --color-download-bubble-info-background: #f2f2f2ff;
-    --color-download-bubble-info-icon: #5f6368ff;
-    --color-download-item-foreground: #202124ff;
-    --color-download-item-foreground-dangerous: #b31412ff;
-    --color-download-item-foreground-disabled: #59615cff;
-    --color-download-item-foreground-safe: #0d652dff;
-    --color-download-item-progress-ring-background: #1a73e847;
-    --color-download-item-progress-ring-foreground: #1a73e8ff;
-    --color-download-shelf-background: #c9dfcaff;
-    --color-download-shelf-button-background: #c9dfcaff;
-    --color-download-shelf-button-text: #185abcff;
-    --color-download-shelf-button-icon: #202124ff;
-    --color-download-shelf-button-icon-disabled: #20212461;
-    --color-download-shelf-content-area-separator: #a3b4a4ff;
-    --color-download-shelf-foreground: #202124ff;
-    --color-download-started-animation-foreground: #1a73e8ff;
-    --color-download-toolbar-button-active: #1a73e8ff;
-    --color-download-toolbar-button-animation-background: #bbd4c7ff;
-    --color-download-toolbar-button-animation-foreground: #174ea6ff;
-    --color-download-toolbar-button-inactive: #202124ff;
-    --color-download-toolbar-button-ring-background: #0001bb33;
-    --color-extension-dialog-background: #ffffffff;
-    --color-extension-icon-badge-background-default: #1a73e8ff;
-    --color-extension-icon-decoration-ambient-shadow: #3c404326;
-    --color-extension-icon-decoration-background: #ffffffff;
-    --color-extension-icon-decoration-key-shadow: #3c40434d;
-    --color-extension-menu-icon: #5f6368ff;
-    --color-extension-menu-icon-disabled: #5f636861;
-    --color-extension-menu-pin-button-icon: #1a73e8ff;
-    --color-extension-menu-pin-button-icon-disabled: #1a73e861;
-    --color-extensions-menu-highlighted-background: #f2f7f2ff;
-    --color-extensions-toolbar-controls-background: #f2f7f2ff;
-    --color-eyedropper-boundary: #444444ff;
-    --color-eyedropper-central-pixel-inner-ring: #000000ff;
-    --color-eyedropper-central-pixel-outer-ring: #ffffffff;
-    --color-eyedropper-grid: #888888ff;
-    --color-feature-promo-bubble-background: #1967d2ff;
-    --color-feature-promo-bubble-button-border: #dadce0ff;
-    --color-feature-promo-bubble-close-button-ink-drop: #8ab4f8ff;
-    --color-feature-promo-bubble-default-button-background: #ffffffff;
-    --color-feature-promo-bubble-default-button-foreground: #1967d2ff;
-    --color-feature-promo-bubble-foreground: #ffffffff;
-    --color-feature-lens-promo-bubble-background: #1967d2ff;
-    --color-feature-lens-promo-bubble-foreground: #ffffffff;
-    --color-find-bar-background: #ffffffff;
-    --color-find-bar-button-icon: #626365ff;
-    --color-find-bar-button-icon-disabled: #8f9195ff;
-    --color-find-bar-foreground: #202124ff;
-    --color-find-bar-match-count: #5f6368ff;
-    --color-find-bar-separator: #dadce0ff;
-    --color-flying-indicator-background: #c9dfcaff;
-    --color-flying-indicator-foreground: #202124ff;
-    --color-focus-highlight-default: #101010ff;
-    --color-frame-caption-active: #202124ff;
-    --color-frame-caption-inactive: #202124ff;
-    --color-info-bar-background: #c9dfcaff;
-    --color-info-bar-button-icon: #202124ff;
-    --color-info-bar-button-icon-disabled: #20212461;
-    --color-info-bar-content-area-separator: #a3b4a4ff;
-    --color-info-bar-foreground: #202124ff;
-    --color-intent-picker-item-background-hovered: #2021240f;
-    --color-intent-picker-item-background-selected: #dfebfcff;
-    --color-location-bar-background: #f2f7f2ff;
-    --color-location-bar-background-hovered: #eaefeaff;
-    --color-location-bar-border: #0000004d;
-    --color-location-bar-border-opaque: #8c9c8dff;
-    --color-location-bar-clear-all-button-icon: #626365ff;
-    --color-location-bar-clear-all-button-icon-disabled: #62636561;
-    --color-media-router-icon-active: #1a73e8ff;
-    --color-media-router-icon-warning: #f29900ff;
-    --color-new-tab-button-foreground-frame-active: #ff0000ff;
-    --color-new-tab-button-foreground-frame-inactive: #ff0000ff;
-    --color-new-tab-button-background-frame-active: #86b788ff;
-    --color-new-tab-button-background-frame-inactive: #86b788ff;
-    --color-new-tab-button-focus-ring: #174ea6ff;
-    --color-new-tab-button-ink-drop-frame-active: #202124ff;
-    --color-new-tab-button-ink-drop-frame-inactive: #202124ff;
-    --color-new-tab-button-c-r-foreground-frame-active: #202124ff;
-    --color-new-tab-button-c-r-foreground-frame-inactive: #2021246e;
-    --color-new-tab-button-c-r-background-frame-active: #c9dfcaff;
-    --color-new-tab-button-c-r-background-frame-inactive: #c9dfcaff;
-    --color-new-tab-page-action-button-background: #202124ff;
-    --color-new-tab-page-action-button-border: #dadce0ff;
-    --color-new-tab-page-action-button-border-hovered: #d2e3fcff;
-    --color-new-tab-page-action-button-foreground: #ffffffff;
-    --color-new-tab-page-active-background: #20212428;
-    --color-new-tab-page-attribution-foreground: #3c4043ff;
-    --color-new-tab-page-background: #c9dfcaff;
-    --color-new-tab-page-background-override: #ffffffff;
-    --color-new-tab-page-border: #aecfb0ff;
-    --color-new-tab-page-button-background: #aecfb0ff;
-    --color-new-tab-page-button-background-hovered: #20212419;
-    --color-new-tab-page-button-foreground: #202124ff;
-    --color-new-tab-page-cart-module-discount-chip-background: #e6f4eaff;
-    --color-new-tab-page-cart-module-discount-chip-foreground: #188038ff;
-    --color-new-tab-page-chip-background: #202124ff;
-    --color-new-tab-page-chip-foreground: #ffffffff;
-    --color-new-tab-page-control-background-hovered: #20212419;
-    --color-new-tab-page-control-background-selected: #1a73e83d;
-    --color-new-tab-page-dialog-background: #ffffffff;
-    --color-new-tab-page-dialog-background-active: #20212428;
-    --color-new-tab-page-dialog-border: #dadce0ff;
-    --color-new-tab-page-dialog-border-selected: #1a73e8ff;
-    --color-new-tab-page-dialog-control-background-hovered: #20212419;
-    --color-new-tab-page-dialog-foreground: #202124ff;
-    --color-new-tab-page-dialog-secondary-foreground: #5f6368ff;
-    --color-new-tab-page-first-run-background: #c9dfcaff;
-    --color-new-tab-page-focus-ring: #1967d2ff;
-    --color-new-tab-page-header: #969696ff;
-    --color-new-tab-page-history-clusters-module-item-background: #c9dfcaff;
-    --color-new-tab-page-promo-background: #aecfb0ff;
-    --color-new-tab-page-promo-image-background: #ffffffff;
-    --color-new-tab-page-icon-button-background: #80868bff;
-    --color-new-tab-page-icon-button-background-active: #5f6368ff;
-    --color-new-tab-page-link: #202124ff;
-    --color-new-tab-page-logo: #79b07cff;
-    --color-new-tab-page-logo-unthemed-dark: #5f6368ff;
-    --color-new-tab-page-logo-unthemed-light: #eeeeeeff;
-    --color-new-tab-page-menu-inner-shadow: #3c40434c;
-    --color-new-tab-page-menu-outer-shadow: #3c404326;
-    --color-new-tab-page-mic-border-color: #dadce0ff;
-    --color-new-tab-page-mic-icon-color: #5f6368ff;
-    --color-new-tab-page-module-control-border: #c9dfcaff;
-    --color-new-tab-page-module-background: #aecfb0ff;
-    --color-new-tab-page-module-icon-container-background: #1a73e83d;
-    --color-new-tab-page-module-item-background: #c9dfcaff;
-    --color-new-tab-page-module-scroll-button-background: #f1f3f4ff;
-    --color-new-tab-page-module-scroll-button-background-hovered: #dadce0ff;
-    --color-new-tab-page-most-visited-foreground: #3c4043ff;
-    --color-new-tab-page-most-visited-tile-background: #aecfb0ff;
-    --color-new-tab-page-most-visited-tile-background-themed: #aecfb0ff;
-    --color-new-tab-page-most-visited-tile-background-unthemed: #f1f3f4ff;
-    --color-new-tab-page-on-theme-foreground: #202124ff;
-    --color-new-tab-page-overlay-background: #ffffffff;
-    --color-new-tab-page-overlay-foreground: #202124ff;
-    --color-new-tab-page-overlay-secondary-foreground: #5f6368ff;
-    --color-new-tab-page-primary-foreground: #202124ff;
-    --color-new-tab-page-search-box-background: #ff0000ff;
-    --color-new-tab-page-search-box-background-hovered: #ff0000ff;
-    --color-new-tab-page-search-box-results-text-dimmed-selected: #ff0000ff;
-    --color-new-tab-page-secondary-foreground: #3c4043ff;
-    --color-new-tab-page-section-border: #96969650;
-    --color-new-tab-page-selected-background: #1967d228;
-    --color-new-tab-page-selected-border: #1a73e8ff;
-    --color-new-tab-page-selected-foreground: #1967d2ff;
-    --color-new-tab-page-tag-background: #aecfb0e5;
-    --color-new-tab-page-text: #202124ff;
-    --color-new-tab-page-text-unthemed: #f8f9faff;
-    --color-new-tab-page-text-light: #737782ff;
-    --color-omnibox-answer-icon-background: #1a73e8ff;
-    --color-omnibox-answer-icon-foreground: #ffffffff;
-    --color-omnibox-answer-icon-g-m3-background: #d3e3fdff;
-    --color-omnibox-answer-icon-g-m3-foreground: #041e49ff;
-    --color-omnibox-bubble-outline: #20212424;
-    --color-omnibox-bubble-outline-experimental-keyword-mode: #2965c7ff;
-    --color-omnibox-chip-background: #c9dfcaff;
-    --color-omnibox-chip-foreground-low-visibility: #202124ff;
-    --color-omnibox-chip-foreground-normal-visibility: #1a73e8ff;
-    --color-omnibox-keyword-selected: #2965c7ff;
-    --color-omnibox-keyword-separator: #202124ff;
-    --color-omnibox-results-background: #ffffffff;
-    --color-omnibox-results-background-hovered: #e8e8e9ff;
-    --color-omnibox-results-background-selected: #e8e8e9ff;
-    --color-omnibox-results-button-border: #b8bbb9ff;
-    --color-omnibox-results-button-icon: #626365ff;
-    --color-omnibox-results-button-icon-selected: #626365ff;
-    --color-omnibox-results-button-ink-drop: #202124ff;
-    --color-omnibox-results-button-ink-drop-selected: #202124ff;
-    --color-omnibox-results-focus-indicator: #1a73e8ff;
-    --color-omnibox-results-icon: #626365ff;
-    --color-omnibox-results-icon-g-m3-background: #f2f2f2ff;
-    --color-omnibox-results-icon-selected: #626365ff;
-    --color-omnibox-results-starter-pack-icon: #1a73e8ff;
-    --color-omnibox-results-text-dimmed: #67686aff;
-    --color-omnibox-results-text-dimmed-selected: #67686aff;
-    --color-omnibox-results-text-negative: #c52e25ff;
-    --color-omnibox-results-text-negative-selected: #c52e25ff;
-    --color-omnibox-results-text-positive: #197836ff;
-    --color-omnibox-results-text-positive-selected: #197836ff;
-    --color-omnibox-results-text-secondary: #65696eff;
-    --color-omnibox-results-text-secondary-selected: #65696eff;
-    --color-omnibox-results-text-selected: #202124ff;
-    --color-omnibox-results-url: #2965c7ff;
-    --color-omnibox-results-url-selected: #2965c7ff;
-    --color-omnibox-security-chip-dangerous: #cc2f25ff;
-    --color-omnibox-security-chip-default: #5f6368ff;
-    --color-omnibox-security-chip-secure: #5f6368ff;
-    --color-omnibox-text: #202124ff;
-    --color-omnibox-text-dimmed: #6a6c6cff;
-    --color-page-action-icon: #626365ff;
-    --color-page-action-icon-hover: #2021241a;
-    --color-page-action-icon-pressed: #20212429;
-    --color-page-info-background: #c9dfcaff;
-    --color-page-info-chosen-object-delete-button-icon: #5f6368ff;
-    --color-page-info-chosen-object-delete-button-icon-disabled: #5f636861;
-    --color-page-info-icon-hover: #2021241a;
-    --color-page-info-icon-pressed: #20212429;
-    --color-payments-feedback-tip-background: #f2f2f2ff;
-    --color-payments-feedback-tip-border: #dadce0ff;
-    --color-payments-feedback-tip-foreground: #5f6368ff;
-    --color-payments-feedback-tip-icon: #f29900ff;
-    --color-payments-google-pay-logo: #5f6368ff;
-    --color-payments-promo-code-background: #e6f4eaff;
-    --color-payments-promo-code-foreground: #137333ff;
-    --color-payments-promo-code-foreground-hovered: #0d652dff;
-    --color-payments-promo-code-foreground-pressed: #0d652dff;
-    --color-payments-promo-code-ink-drop: #1e8e3eff;
-    --color-payments-request-back-arrow-button-icon: #5f6368ff;
-    --color-payments-request-back-arrow-button-icon-disabled: #5f636861;
-    --color-payments-request-row-background-highlighted: #0000000d;
-    --color-pip-window-back-to-tab-button-background: #00000060;
-    --color-pip-window-background: #000000ff;
-    --color-pip-window-controls-background: #202124c1;
-    --color-pip-window-top-bar-background: #202124ff;
-    --color-pip-window-foreground: #ffffffff;
-    --color-pip-window-foreground-inactive: #9aa0a6ff;
-    --color-pip-window-hang-up-button-foreground: #f28b82ff;
-    --color-pip-window-skip-ad-button-background: #5f6368ff;
-    --color-pip-window-skip-ad-button-border: #ffffffff;
-    --color-profiles-reauth-dialog-border: #ffffffff;
-    --color-pwa-background: #ff0000ff;
-    --color-pwa-menu-button-icon: #ff0000ff;
-    --color-pwa-security-chip-foreground: #ff0000ff;
-    --color-pwa-security-chip-foreground-dangerous: #ff0000ff;
-    --color-pwa-security-chip-foreground-policy-cert: #ff0000ff;
-    --color-pwa-security-chip-foreground-secure: #ff0000ff;
-    --color-pwa-tab-bar-bottom-separator: #ff0000ff;
-    --color-pwa-tab-bar-top-separator: #ff0000ff;
-    --color-pwa-theme: #ff0000ff;
-    --color-pwa-toolbar-background: #ff0000ff;
-    --color-pwa-toolbar-button-icon: #ff0000ff;
-    --color-pwa-toolbar-button-icon-disabled: #ff0000ff;
-    --color-qr-code-background: #ffffffff;
-    --color-qr-code-border: #dadce0ff;
-    --color-quick-answers-report-query-button-background: #1a73e80a;
-    --color-quick-answers-report-query-button-foreground: #1967d2ff;
-    --color-realbox-background: #ffffffff;
-    --color-realbox-background-hovered: #ffffffff;
-    --color-realbox-border: #dadce0ff;
-    --color-realbox-foreground: #000000ff;
-    --color-realbox-placeholder: #5f6368ff;
-    --color-realbox-results-background: #ffffffff;
-    --color-realbox-results-background-hovered: #20212419;
-    --color-realbox-results-control-background-hovered: #20212419;
-    --color-realbox-results-dim-selected: #5f6368ff;
-    --color-realbox-results-foreground: #000000ff;
-    --color-realbox-results-foreground-dimmed: #5f6368ff;
-    --color-realbox-results-icon: #5f6368ff;
-    --color-realbox-results-icon-focused-outline: #1a73e8ff;
-    --color-realbox-results-icon-selected: #5f6368ff;
-    --color-realbox-results-url: #1967d2ff;
-    --color-realbox-results-url-selected: #1967d2ff;
-    --color-realbox-search-icon-background: #5f6368ff;
-    --color-realbox-shadow: #20212447;
-    --color-screenshot-captured-image-background: #ffffffff;
-    --color-screenshot-captured-image-border: #dadce0ff;
-    --color-side-panel-background: #c9dfcaff;
-    --color-side-panel-badge-background: #ff0000ff;
-    --color-side-panel-badge-background-updated: #ff0000ff;
-    --color-side-panel-badge-foreground: #ff0000ff;
-    --color-side-panel-badge-foreground-updated: #ff0000ff;
-    --color-side-panel-card-background: #ff0000ff;
-    --color-side-panel-content-area-separator: #dadce0ff;
-    --color-side-panel-content-background: #ff0000ff;
-    --color-side-panel-edit-footer-border: #ff0000ff;
-    --color-side-panel-filter-chip-border: #ff0000ff;
-    --color-side-panel-filter-chip-foreground: #ff0000ff;
-    --color-side-panel-filter-chip-foreground-selected: #ff0000ff;
-    --color-side-panel-filter-chip-icon: #ff0000ff;
-    --color-side-panel-filter-chip-icon-selected: #ff0000ff;
-    --color-side-panel-filter-chip-background-hover: #ff0000ff;
-    --color-side-panel-filter-chip-background-selected: #ff0000ff;
-    --color-side-panel-scrollbar-thumb: #ff0000ff;
-    --color-side-panel-textfield-background-hover: #ff0000ff;
-    --color-side-panel-textfield-border: #ff0000ff;
-    --color-status-bubble-background-frame-active: #86b788ff;
-    --color-status-bubble-background-frame-inactive: #86b788ff;
-    --color-status-bubble-foreground-frame-active: #202124ff;
-    --color-status-bubble-foreground-frame-inactive: #37433bff;
-    --color-status-bubble-shadow: #0000001e;
-    --color-tab-alert-audio-playing-active-frame-active: #202124ff;
-    --color-tab-alert-audio-playing-active-frame-inactive: #202124ff;
-    --color-tab-alert-audio-playing-inactive-frame-active: #202124ff;
-    --color-tab-alert-audio-playing-inactive-frame-inactive: #37433bff;
-    --color-tab-alert-media-recording-active-frame-active: #d93025ff;
-    --color-tab-alert-media-recording-active-frame-inactive: #d93025ff;
-    --color-tab-alert-media-recording-inactive-frame-active: #d93025ff;
-    --color-tab-alert-media-recording-inactive-frame-inactive: #d93025ff;
-    --color-tab-alert-pip-playing-active-frame-active: #1a73e8ff;
-    --color-tab-alert-pip-playing-active-frame-inactive: #1a73e8ff;
-    --color-tab-alert-pip-playing-inactive-frame-active: #174ea6ff;
-    --color-tab-alert-pip-playing-inactive-frame-inactive: #174ea6ff;
-    --color-tab-background-active-frame-active: #c9dfcaff;
-    --color-tab-background-active-frame-inactive: #c9dfcaff;
-    --color-tab-background-inactive-frame-active: #86b788ff;
-    --color-tab-background-inactive-frame-inactive: #86b788ff;
-    --color-tab-background-hover-frame-active: #c9dfca7f;
-    --color-tab-background-hover-frame-inactive: #c9dfca7f;
-    --color-tab-close-button-focus-ring-active: #1a73e8ff;
-    --color-tab-close-button-focus-ring-inactive: #174ea6ff;
-    --color-tab-focus-ring-active: #174ea6ff;
-    --color-tab-focus-ring-inactive: #174ea6ff;
-    --color-tab-foreground-active-frame-active: #202124ff;
-    --color-tab-foreground-active-frame-inactive: #202124ff;
-    --color-tab-foreground-inactive-frame-active: #202124ff;
-    --color-tab-foreground-inactive-frame-inactive: #37433bff;
-    --color-tab-divider-frame-active: #c9dfcaff;
-    --color-tab-divider-frame-inactive: #c9dfcaff;
-    --color-tab-hover-card-background: #f8f9faff;
-    --color-tab-hover-card-foreground: #dadce0ff;
-    --color-tab-group-tab-strip-frame-active-grey: #5f6368ff;
-    --color-tab-group-tab-strip-frame-active-blue: #1a73e8ff;
-    --color-tab-group-tab-strip-frame-active-red: #d93025ff;
-    --color-tab-group-tab-strip-frame-active-yellow: #f9ab00ff;
-    --color-tab-group-tab-strip-frame-active-green: #188038ff;
-    --color-tab-group-tab-strip-frame-active-pink: #d01884ff;
-    --color-tab-group-tab-strip-frame-active-purple: #a142f4ff;
-    --color-tab-group-tab-strip-frame-active-cyan: #007b83ff;
-    --color-tab-group-tab-strip-frame-active-orange: #fa903eff;
-    --color-tab-group-tab-strip-frame-inactive-grey: #5f6368ff;
-    --color-tab-group-tab-strip-frame-inactive-blue: #1a73e8ff;
-    --color-tab-group-tab-strip-frame-inactive-red: #d93025ff;
-    --color-tab-group-tab-strip-frame-inactive-yellow: #f9ab00ff;
-    --color-tab-group-tab-strip-frame-inactive-green: #188038ff;
-    --color-tab-group-tab-strip-frame-inactive-pink: #d01884ff;
-    --color-tab-group-tab-strip-frame-inactive-purple: #a142f4ff;
-    --color-tab-group-tab-strip-frame-inactive-cyan: #007b83ff;
-    --color-tab-group-tab-strip-frame-inactive-orange: #fa903eff;
-    --color-tab-group-dialog-grey: #5f6368ff;
-    --color-tab-group-dialog-blue: #1a73e8ff;
-    --color-tab-group-dialog-red: #d93025ff;
-    --color-tab-group-dialog-yellow: #f9ab00ff;
-    --color-tab-group-dialog-green: #188038ff;
-    --color-tab-group-dialog-pink: #d01884ff;
-    --color-tab-group-dialog-purple: #a142f4ff;
-    --color-tab-group-dialog-cyan: #007b83ff;
-    --color-tab-group-dialog-orange: #fa903eff;
-    --color-tab-group-context-menu-blue: #1a73e8ff;
-    --color-tab-group-context-menu-cyan: #007b83ff;
-    --color-tab-group-context-menu-green: #188038ff;
-    --color-tab-group-context-menu-grey: #5f6368ff;
-    --color-tab-group-context-menu-orange: #fa903eff;
-    --color-tab-group-context-menu-pink: #d01884ff;
-    --color-tab-group-context-menu-purple: #a142f4ff;
-    --color-tab-group-context-menu-red: #d93025ff;
-    --color-tab-group-context-menu-yellow: #f9ab00ff;
-    --color-tab-group-bookmark-bar-grey: #f1f3f4ff;
-    --color-tab-group-bookmark-bar-blue: #e8f0feff;
-    --color-tab-group-bookmark-bar-red: #fce8e6ff;
-    --color-tab-group-bookmark-bar-yellow: #fef7e0ff;
-    --color-tab-group-bookmark-bar-green: #e6f4eaff;
-    --color-tab-group-bookmark-bar-pink: #fde7f3ff;
-    --color-tab-group-bookmark-bar-purple: #f3e8fdff;
-    --color-tab-group-bookmark-bar-cyan: #e4f7fbff;
-    --color-tab-group-bookmark-bar-orange: #feefe3ff;
-    --color-tab-stroke-frame-active: #5e7c61ff;
-    --color-tab-stroke-frame-inactive: #5e7c61ff;
-    --color-tabstrip-loading-progress-background: #a6c5c7ff;
-    --color-tabstrip-loading-progress-foreground: #185abcff;
-    --color-tabstrip-scroll-container-shadow: #3c40434d;
-    --color-tab-throbber: #202124ff;
-    --color-tab-throbber-preconnect: #202124ff;
-    --color-thumbnail-tab-background: #174ea6ff;
-    --color-thumbnail-tab-foreground: #ffffffff;
-    --color-thumbnail-tab-strip-background-active: #86b788ff;
-    --color-thumbnail-tab-strip-background-inactive: #86b788ff;
-    --color-thumbnail-tab-strip-tab-group-frame-active-grey: #5f6368ff;
-    --color-thumbnail-tab-strip-tab-group-frame-active-blue: #1a73e8ff;
-    --color-thumbnail-tab-strip-tab-group-frame-active-red: #d93025ff;
-    --color-thumbnail-tab-strip-tab-group-frame-active-yellow: #f9ab00ff;
-    --color-thumbnail-tab-strip-tab-group-frame-active-green: #188038ff;
-    --color-thumbnail-tab-strip-tab-group-frame-active-pink: #d01884ff;
-    --color-thumbnail-tab-strip-tab-group-frame-active-purple: #a142f4ff;
-    --color-thumbnail-tab-strip-tab-group-frame-active-cyan: #007b83ff;
-    --color-thumbnail-tab-strip-tab-group-frame-active-orange: #fa903eff;
-    --color-thumbnail-tab-strip-tab-group-frame-inactive-grey: #5f6368ff;
-    --color-thumbnail-tab-strip-tab-group-frame-inactive-blue: #1a73e8ff;
-    --color-thumbnail-tab-strip-tab-group-frame-inactive-red: #d93025ff;
-    --color-thumbnail-tab-strip-tab-group-frame-inactive-yellow: #f9ab00ff;
-    --color-thumbnail-tab-strip-tab-group-frame-inactive-green: #188038ff;
-    --color-thumbnail-tab-strip-tab-group-frame-inactive-pink: #d01884ff;
-    --color-thumbnail-tab-strip-tab-group-frame-inactive-purple: #a142f4ff;
-    --color-thumbnail-tab-strip-tab-group-frame-inactive-cyan: #007b83ff;
-    --color-thumbnail-tab-strip-tab-group-frame-inactive-orange: #fa903eff;
-    --color-toolbar: #c9dfcaff;
-    --color-toolbar-background-subtle-emphasis: #f2f7f2ff;
-    --color-toolbar-background-subtle-emphasis-hovered: #eaefeaff;
-    --color-toolbar-button-background-highlighted-default: #ffffffcc;
-    --color-toolbar-button-border: #20212420;
-    --color-toolbar-button-icon: #202124ff;
-    --color-toolbar-button-icon-default: #5f6368ff;
-    --color-toolbar-button-icon-disabled: #20212461;
-    --color-toolbar-button-icon-hovered: #202124ff;
-    --color-toolbar-button-icon-inactive: #2021246e;
-    --color-toolbar-button-icon-pressed: #202124ff;
-    --color-toolbar-button-text: #202124ff;
-    --color-toolbar-content-area-separator: #a3b4a4ff;
-    --color-toolbar-extension-separator-disabled: #2021246e;
-    --color-toolbar-extension-separator-enabled: #86b788ff;
-    --color-toolbar-feature-promo-highlight: #1a73e8ff;
-    --color-toolbar-ink-drop: #202124ff;
-    --color-toolbar-ink-drop-hover: #20212414;
-    --color-toolbar-ink-drop-ripple: #20212410;
-    --color-toolbar-separator: #2021244d;
-    --color-toolbar-separator-default: #2021244d;
-    --color-toolbar-text: #202124ff;
-    --color-toolbar-text-default: #3c4043ff;
-    --color-toolbar-text-disabled: #20212461;
-    --color-toolbar-text-disabled-default: #20212461;
-    --color-toolbar-top-separator-frame-active: #5e7c61ff;
-    --color-toolbar-top-separator-frame-inactive: #5e7c61ff;
-    --color-web-authn-back-arrow-button-icon: #5f6368ff;
-    --color-web-authn-back-arrow-button-icon-disabled: #5f636861;
-    --color-web-authn-pin-textfield-bottom-border: #1a73e8ff;
-    --color-web-authn-progress-ring-background: #1a73e847;
-    --color-web-authn-progress-ring-foreground: #1a73e8ff;
-    --color-web-contents-background: #c9dfcaff;
-    --color-web-contents-background-letterboxing: #282d28ff;
-    --color-web-ui-tab-strip-background: #86b788ff;
-    --color-web-ui-tab-strip-focus-outline: #1a73e8ff;
-    --color-web-ui-tab-strip-indicator-capturing: #202124ff;
-    --color-web-ui-tab-strip-indicator-pip: #202124ff;
-    --color-web-ui-tab-strip-indicator-recording: #d93025ff;
-    --color-web-ui-tab-strip-scrollbar-thumb: #202124b2;
-    --color-web-ui-tab-strip-tab-active-title-background: #174ea6ff;
-    --color-web-ui-tab-strip-tab-active-title-content: #ffffffff;
-    --color-web-ui-tab-strip-tab-background: #c9dfcaff;
-    --color-web-ui-tab-strip-tab-blocked: #1a73e8ff;
-    --color-web-ui-tab-strip-tab-loading-spinning: #202124ff;
-    --color-web-ui-tab-strip-tab-separator: #20212428;
-    --color-web-ui-tab-strip-tab-text: #202124ff;
-    --color-web-ui-tab-strip-tab-waiting-spinning: #202124ff;
-    --color-window-control-button-background-active: #86b788ff;
-    --color-window-control-button-background-inactive: #86b788ff;
-    --color-read-anything-background: #f1f3f4ff;
-    --color-read-anything-background-blue: #aecbfaff;
-    --color-read-anything-background-dark: #202124ff;
-    --color-read-anything-background-light: #f1f3f4ff;
-    --color-read-anything-background-yellow: #fde293ff;
-    --color-read-anything-foreground: #3c4043ff;
-    --color-read-anything-foreground-blue: #3c4043ff;
-    --color-read-anything-foreground-dark: #e8f0feff;
-    --color-read-anything-foreground-light: #3c4043ff;
-    --color-read-anything-foreground-yellow: #3c4043ff;
-    --color-read-anything-separator: #dadce0ff;
-    --color-read-anything-separator-blue: #5f6368ff;
-    --color-read-anything-separator-dark: #3c4043ff;
-    --color-read-anything-separator-light: #dadce0ff;
-    --color-read-anything-separator-yellow: #5f6368ff;
-    --color-read-anything-dropdown-background: #ffffffff;
-    --color-read-anything-dropdown-background-blue: #d2e3fcff;
-    --color-read-anything-dropdown-background-dark: #202124ff;
-    --color-read-anything-dropdown-background-light: #ffffffff;
-    --color-read-anything-dropdown-background-yellow: #fef7e0ff;
-    --color-read-anything-dropdown-selected: #e8eaedff;
-    --color-read-anything-dropdown-selected-blue: #aecbfaff;
-    --color-read-anything-dropdown-selected-dark: #3c4043ff;
-    --color-read-anything-dropdown-selected-light: #e8eaedff;
-    --color-read-anything-dropdown-selected-yellow: #fde293ff;
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.6.1.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2023-10-19T10:47:44.564546452"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<style type="text/css">
+		h1 { color: #000000; margin-left: 2cm; margin-right: 2cm }
+		p { color: #000000; margin-left: 2cm; margin-right: 2cm }
+		h2 { color: #000000; margin-left: 2cm; margin-right: 2cm }
+		h2.cjk { font-family: "Droid Sans Fallback" }
+		h2.ctl { font-family: "Droid Sans Devanagari" }
+		h3 { color: #000000; margin-left: 2cm; margin-right: 2cm }
+		h3.cjk { font-family: "Droid Sans Fallback" }
+		h3.ctl { font-family: "Droid Sans Devanagari" }
+		p.standard { font-family: "Liberation Serif"; font-size: 12pt; direction: ltr }
+		.button {
+                background-color: #008CBA; /* Green */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+              }
+		body {
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+		@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+html {
+  scroll-behavior: smooth;
+ }
+ 
+ a {
+  text-decoration: none;
+  color: black;
+ } 
+ 
+ #down {
+  margin-top: 100%;
+  padding-bottom: 25%;
+ } 
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
 }
 
-   
-</style>
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+	</style>
+	<div>
+		<div class="wave"></div>
+		<div class="wave"></div>
+		<div class="wave"></div>
+	 </div>
 </head>
-
-<body dir="ltr" style="max-width:21.001cm;margin-top:2cm; margin-bottom:2cm; margin-left:2cm; margin-right:2cm; ">
-
-<p class="Standard">Команды для игроков на Сервере:</p>
-
-<p class="Standard">Команды Меню:</p>
-
-<p class="Standard">- /menutp  /tpmenu</p>
-
-<p class="Standard">- /bankomat</p>
-
-<p class="Standard">- /musorka</p>
-
-<p class="Standard">- /egg</p>
-
-<p class="Standard">- /site</p>
-
-<p class="Standard">- /nightviz</p>
-
-<p class="Standard">- ~Скоро~</p>
-
-<p class="Standard">- ~Скоро~</p>
-
-<p class="Standard">- ~Скоро~</p>
-
-<p class="Standard">Warp-команды:</p>
-
-<p class="Standard">- /warp lobby</p>
-
-<p class="Standard">- /warp spawn</p>
-
-<p class="Standard">- /warp musorka</p>
-
-<p class="Standard">- /warp secret</p>
-
-<p class="Standard">- /warp brrskibididopdop</p>
-
-<p class="Standard">- ~скоро!~</p>
-
-<p class="Standard">Команды косаемые денег:</p>
-
-<p class="Standard">- /bankomat</p>
-
-<p class="Standard">- /pay</p>
-
-<p class="Standard">- /balance</p>
-
-<p class="Standard">Команды чат:</p>
-
-<p class="Standard"> - /say (текст)</p>
-
-<p class="Standard"> - /tell (Игрок) (текст)</p>
-
-<p class="Standard"> - /near (радиус) (текст)</p>
-
-<p class="Standard">Секретные команды;)</p>
-
-<p class="Standard">- /kittycannon</p>
-
-<p class="Standard">- /beecannon</p>
-
-<p class="Standard">- /f</p>
-
-<p class="Standard">- /lox</p>
-
-<p class="Standard">Остальные команды:</p>
-<p class="Standard"> </p><p class="Standard"> </p>
-<p class="Standard">****V - vip****</p>
-<p class="Standard"> </p>
-<p class="Standard">  - afk</p>
-
-<p class="Standard">  - afk.auto</p>
-
-<p class="Standard">  - back</p>
-
-<p class="Standard">  - back.ondeath</p>
-
-<p class="Standard">  - balance</p>
-
-<p class="Standard">  - balance.others</p>
-
-<p class="Standard">  - balancetop</p>
-
-<p class="Standard">  - build  VIP</p>
-
-<p class="Standard">  - chat.color</p>
-
-<p class="Standard">  - chat.format</p>
-
-<p class="Standard">  - chat.shout</p>
-
-<p class="Standard">  - chat.question</p>
-
-<p class="Standard">  - clearinventory</p>
-
-<p class="Standard">  - compass</p>
-
-<p class="Standard">  - depth</p>
-
-<p class="Standard">  - delhome</p>
-
-<p class="Standard">  - getpos</p>
-
-<p class="Standard">  - geoip.show</p>
-
-<p class="Standard">  - help</p>
-
-<p class="Standard">  - helpop</p>
-
-<p class="Standard">  - home</p>
-
-<p class="Standard">  - home.others VIP</p>
-
-<p class="Standard">  - ignore</p>
-
-<p class="Standard">  - info</p>
-
-<p class="Standard">  - itemdb VIP</p>
-
-<p class="Standard">  - kit</p>
-
-<p class="Standard">  - kits.tools</p>
-
-<p class="Standard">  - list</p>
-
-<p class="Standard">  - mail</p>
-
-<p class="Standard">  - mail.send</p>
-
-<p class="Standard">  - me</p>
-
-<p class="Standard">  - motd</p>
-
-<p class="Standard">  - msg</p>
-
-<p class="Standard">  - msg.color VIP</p>
-
-<p class="Standard">  - nick</p>
-
-<p class="Standard">  - near</p>
-
-<p class="Standard">  - pay</p>
-
-<p class="Standard">  - ping</p>
-
-<p class="Standard">  - protect VIP</p>
-
-<p class="Standard">  - r</p>
-
-<p class="Standard">  - rules</p>
-
-<p class="Standard">  - renamehome</p>
-
-<p class="Standard">  - realname</p>
-
-<p class="Standard">  - seen</p>
-
-<p class="Standard">  - sell</p>
-
-<p class="Standard">  - sethome</p>
-
-<p class="Standard">  - setxmpp</p>
-<p class="Standard"> </p>
-<p class="Standard">  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~VIP</p>
-
-<p class="Standard">  - signs.create.protection</p>
-
-<p class="Standard">  - signs.create.trade</p>
-
-<p class="Standard">  - signs.break.protection</p>
-
-<p class="Standard">  - signs.break.trade</p>
-
-<p class="Standard">  - signs.use.balance</p>
-
-<p class="Standard">  - signs.use.buy</p>
-
-<p class="Standard">  - signs.use.disposal</p>
-
-<p class="Standard">  - signs.use.enchant</p>
-
-<p class="Standard">  - signs.use.free</p>
-
-<p class="Standard">  - signs.use.gamemode</p>
-
-<p class="Standard">  - signs.use.heal</p>
-
-<p class="Standard">  - signs.use.info</p>
-
-<p class="Standard">  - signs.use.kit</p>
-
-<p class="Standard">  - signs.use.mail</p>
-
-<p class="Standard">  - signs.use.protection</p>
-
-<p class="Standard">  - signs.use.repair</p>
-
-<p class="Standard">  - signs.use.sell</p>
-
-<p class="Standard">  - signs.use.time</p>
-
-<p class="Standard">  - signs.use.trade</p>
-
-<p class="Standard">  - signs.use.warp</p>
-
-<p class="Standard">  - signs.use.weather</p>
-
-<p class="Standard">  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~VIP</p>
-
-<p class="Standard">  - spawn</p>
-
-<p class="Standard">  - suicide</p>
-
-<p class="Standard">  - time</p>
-
-<p class="Standard">  - tpa</p>
-
-<p class="Standard">  - tpaccept</p>
-
-<p class="Standard">  - tpahere</p>
-
-<p class="Standard">  - tpdeny</p>
-
-<p class="Standard">  - warp</p>
-
-<p class="Standard">  - warp.list</p>
-
-<p class="Standard">  - world</p>
-
-<p class="Standard">  - worth</p>
-
-<p class="Standard">  - xmpp</p>
+<body lang="en-GB" text="#000000" dir="ltr"><h1>Команды для
+игроков на Сервере:</h1>
+<a href="#down">Click Here to Smoothly Scroll Down</a>
+
+<div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+ </div>
+<h2 class="western">Команды Меню:</h2>
+<p class="standard">- /menutp &nbsp;/tpmenu</p>
+<p class="standard">- /bankomat</p>
+<p class="standard">- /musorka</p>
+<p class="standard">- /egg</p>
+<p class="standard">- /site</p>
+<p class="standard">- /nightviz</p>
+<p class="standard">- ~Скоро~</p>
+<p class="standard">- ~Скоро~</p>
+<p class="standard">- ~Скоро~</p>
+<h2 class="western">Warp-команды:</h2>
+<p class="standard">- /warp lobby</p>
+<p class="standard">- /warp spawn</p>
+<p class="standard">- /warp musorka</p>
+<p class="standard">- /warp secret</p>
+<p class="standard">- /warp brrskibididopdop</p>
+<p class="standard">- ~скоро!~</p>
+<h2 class="western">Команды косаемые денег:</h2>
+<p class="standard">- /bankomat</p>
+<p class="standard">- /pay</p>
+<p class="standard">- /balance</p>
+<h2 class="western">Команды чат:</h2>
+<p class="standard">&nbsp;- /say (текст)</p>
+<p class="standard">&nbsp;- /tell (Игрок) (текст)</p>
+<p class="standard">&nbsp;- /near (радиус) (текст)</p>
+<h3 class="western">Секретные команды;)</h3>
+<p class="standard">- /kittycannon</p>
+<p class="standard">- /beecannon</p>
+<p class="standard">- /f</p>
+<p class="standard">- /lox</p>
+<p class="standard">- /beezooka</p>
+<h2 class="western">Остальные команды:</h2>
+<p class="standard">&nbsp;</p>
+<p class="standard">&nbsp;</p>
+<p class="standard">****V - vip****</p>
+<p class="standard">&nbsp;</p>
+<p class="standard">&nbsp; - afk</p>
+<p class="standard">&nbsp; - afk.auto</p>
+<p class="standard">&nbsp; - back</p>
+<p class="standard">&nbsp; - back.ondeath</p>
+<p class="standard">&nbsp; - balance</p>
+<p class="standard">&nbsp; - balance.others</p>
+<p class="standard">&nbsp; - balancetop</p>
+<p class="standard">&nbsp; - build &nbsp;VIP</p>
+<p class="standard">&nbsp; - chat.color</p>
+<p class="standard">&nbsp; - chat.format</p>
+<p class="standard">&nbsp; - chat.shout</p>
+<p class="standard">&nbsp; - chat.question</p>
+<p class="standard">&nbsp; - clearinventory</p>
+<p class="standard">&nbsp; - compass</p>
+<p class="standard">&nbsp; - depth</p>
+<p class="standard">&nbsp; - delhome</p>
+<p class="standard">&nbsp; - getpos</p>
+<p class="standard">&nbsp; - geoip.show</p>
+<p class="standard">&nbsp; - help</p>
+<p class="standard">&nbsp; - helpop</p>
+<p class="standard">&nbsp; - home</p>
+<p class="standard">&nbsp; - home.others VIP</p>
+<p class="standard">&nbsp; - ignore</p>
+<p class="standard">&nbsp; - info</p>
+<p class="standard">&nbsp; - itemdb VIP</p>
+<p class="standard">&nbsp; - kit</p>
+<p class="standard">&nbsp; - kits.tools</p>
+<p class="standard">&nbsp; - list</p>
+<p class="standard">&nbsp; - mail</p>
+<p class="standard">&nbsp; - mail.send</p>
+<p class="standard">&nbsp; - me</p>
+<p class="standard">&nbsp; - motd</p>
+<p class="standard">&nbsp; - msg</p>
+<p class="standard">&nbsp; - msg.color VIP</p>
+<p class="standard">&nbsp; - nick</p>
+<p class="standard">&nbsp; - near</p>
+<p class="standard">&nbsp; - pay</p>
+<p class="standard">&nbsp; - ping</p>
+<p class="standard">&nbsp; - protect VIP</p>
+<p class="standard">&nbsp; - r</p>
+<p class="standard">&nbsp; - rules</p>
+<p class="standard">&nbsp; - renamehome</p>
+<p class="standard">&nbsp; - realname</p>
+<p class="standard">&nbsp; - seen</p>
+<p class="standard">&nbsp; - sell</p>
+<p class="standard">&nbsp; - sethome</p>
+<p class="standard">&nbsp; - setxmpp</p>
+<p class="standard">&nbsp;</p>
+<p class="standard">&nbsp;
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~VIP</p>
+<p class="standard">&nbsp; - signs.create.protection</p>
+<p class="standard">&nbsp; - signs.create.trade</p>
+<p class="standard">&nbsp; - signs.break.protection</p>
+<p class="standard">&nbsp; - signs.break.trade</p>
+<p class="standard">&nbsp; - signs.use.balance</p>
+<p class="standard">&nbsp; - signs.use.buy</p>
+<p class="standard">&nbsp; - signs.use.disposal</p>
+<p class="standard">&nbsp; - signs.use.enchant</p>
+<p class="standard">&nbsp; - signs.use.free</p>
+<p class="standard">&nbsp; - signs.use.gamemode</p>
+<p class="standard">&nbsp; - signs.use.heal</p>
+<p class="standard">&nbsp; - signs.use.info</p>
+<p class="standard">&nbsp; - signs.use.kit</p>
+<p class="standard">&nbsp; - signs.use.mail</p>
+<p class="standard">&nbsp; - signs.use.protection</p>
+<p class="standard">&nbsp; - signs.use.repair</p>
+<p class="standard">&nbsp; - signs.use.sell</p>
+<p class="standard">&nbsp; - signs.use.time</p>
+<p class="standard">&nbsp; - signs.use.trade</p>
+<p class="standard">&nbsp; - signs.use.warp</p>
+<p class="standard">&nbsp; - signs.use.weather</p>
+<p class="standard">&nbsp;
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~VIP</p>
+<p class="standard">&nbsp; - spawn</p>
+<p class="standard">&nbsp; - suicide</p>
+<p class="standard">&nbsp; - time</p>
+<p class="standard">&nbsp; - tpa</p>
+<p class="standard">&nbsp; - tpaccept</p>
+<p class="standard">&nbsp; - tpahere</p>
+<p class="standard">&nbsp; - tpdeny</p>
+<p class="standard">&nbsp; - warp</p>
+<p class="standard">&nbsp; - warp.list</p>
+<p class="standard">&nbsp; - world</p>
+<p class="standard">&nbsp; - worth</p>
+<p class="standard">&nbsp; - xmpp</p>
+<h1>ВСЕ КОМАНДЫ:</h1>
+<p>//: Toggle the super pickaxe function</p>
+<p> //air: Sets all the blocks in the region to air</p>
+<p> //blob: Creates a distorted sphere</p>
+<p> //calculate: Evaluate a mathematical expression</p>
+<p> //cancel: Cancel your current command</p>
+<p> //caves: Generates a cave network</p>
+<p> //center: Set the center block(s)</p>
+<p> //chunk: Set the selection to your current chunk.</p>
+<p> //cone: Generates a cone.</p>
+<p> //confirm: Confirm a command</p>
+<p> //contract: Contract the selection area</p>
+<p> //copy: Copy the selection to the clipboard</p>
+<p> //count: Counts the number of blocks matching a mask</p>
+<p> //curve: Draws a spline through selected points</p>
+<p> //cut: Cut the selection to the clipboard</p>
+<p> //cyl: Generates a cylinder.</p>
+<p> //deform: Deforms a selected region with an expression</p>
+<p> //distr: Get the distribution of blocks in the selection</p>
+<p> //drain: Drain a pool</p>
+<p> //drawsel: Toggle drawing the current selection</p>
+<p> //expand: Expand the selection area</p>
+<p> //faces: Build the walls, ceiling, and floor of a selection</p>
+<p> //fall: Have the blocks in the selection fall</p>
+<p> //fast: Toggle fast mode</p>
+<p> //fill: Fill a hole</p>
+<p> //fillr: Fill a hole recursively</p>
+<p> //fixlighting: Get the light at a position</p>
+<p> //flip: Flip the contents of the clipboard across the origin</p>
+<p> //flora: Make flora within the region</p>
+<p> //forest: Make a forest within the region</p>
+<p> //generate: Generates a shape according to a formula.</p>
+<p> //generatebiome: Sets biome according to a formula.</p>
+<p> //gsmask: Set the global source mask</p>
+<p> //gtexture: Set the global mask</p>
+<p> //gtransform: Set the global transform</p>
+<p> //hcyl: Generates a hollow cylinder.</p>
+<p> //heightmapinterface: Generate the heightmap interface:
+https://github.com/IntellectualSites/HeightMap</p>
+<p> //help: Displays help for WorldEdit commands</p>
+<p> //history: Manage your history</p>
+<p> //hollow: Hollows out the object contained in this selection</p>
+<p> //hpos1: Set position 1 to targeted block</p>
+<p> //hpos2: Set position 2 to targeted block</p>
+<p> //hpyramid: Generate a hollow pyramid</p>
+<p> //hsphere: Generates a hollow sphere.</p>
+<p> //img: Generate an image</p>
+<p> //inset: Inset the selection area</p>
+<p> //lay: Set the top block in the region</p>
+<p> //lazycopy: Lazily copy the selection to the clipboard</p>
+<p> //limit: Modify block change limit</p>
+<p> //line: Draws line segments between cuboid selection corners or
+convex polyhedral selection vertices</p>
+<p> //macro: Generate or run a macro</p>
+<p> //move: Move the contents of the selection</p>
+<p> //naturalize: 3 layers of dirt on top then rock below</p>
+<p> //nbtinfo: View nbt info for a block</p>
+<p> //ore: Generates ores</p>
+<p> //ores: Generates ores</p>
+<p> //outset: Outset the selection area</p>
+<p> //overlay: Set a block on top of blocks in the region</p>
+<p> //paste: Paste the clipboard's contents</p>
+<p> //perf: Toggle side effects for performance</p>
+<p> //place: Place the clipboard's contents without applying
+transformations (e.g. rotate)</p>
+<p> //pos1: Set position 1</p>
+<p> //pos2: Set position 2</p>
+<p> //pyramid: Generate a filled pyramid</p>
+<p> //regen: Regenerates the contents of the selection</p>
+<p> //removelighting: Removing lighting in a selection</p>
+<p> //reorder: Sets the reorder mode of WorldEdit</p>
+<p> //replace: Replace all blocks in the selection with another</p>
+<p> //rotate: Rotate the contents of the clipboard</p>
+<p> //sel: Choose a region selector</p>
+<p> //set: Sets all the blocks in the region</p>
+<p> //setbiome: Sets the biome of your current block or region.</p>
+<p> //setblocklight: Set block lighting in a selection</p>
+<p> //setskylight: Set sky lighting in a selection</p>
+<p> //shift: Shift the selection area</p>
+<p> //size: Get information about the selection</p>
+<p> //smooth: Smooth the elevation in the selection</p>
+<p> //snowsmooth: Smooth the elevation in the selection with snow
+layers</p>
+<p> //sphere: Generates a filled sphere.</p>
+<p> //stack: Repeat the contents of the selection</p>
+<p> //test: test region</p>
+<p> //timeout: Modify evaluation timeout time.</p>
+<p> //tips: Toggle FAWE tips</p>
+<p> //walls: Build the four sides of the selection</p>
+<p> //wand: Get the wand object</p>
+<p> //watchdog: Changes watchdog hook state.</p>
+<p> //wea: Bypass region restrictions</p>
+<p> //wer: Select your current allowed region</p>
+<p> //world: Sets the world override</p>
+<p> /advancement: A Mojang provided command.</p>
+<p> /afk: Marks you as away-from-keyboard.</p>
+<p> /allowfire: [&lt;world&gt;] - Allows all fire spread temporarily</p>
+<p> /announcement: Announce a message to the entire server.</p>
+<p> /antioch: A little surprise for operators.</p>
+<p> /antiswear: Shows a list of commands for the anti-swear feature.</p>
+<p> /anvil: Opens up an anvil.</p>
+<p> /ascend: Go up a floor</p>
+<p> /attribute: A Mojang provided command.</p>
+<p> /autobroadcast: Shows a list of commands for the auto broadcast
+feature.</p>
+<p> /back: Teleports you to your location prior to tp/spawn/warp.</p>
+<p> /backup: Runs the backup if configured.</p>
+<p> /balance: States the current balance of a player.</p>
+<p> /balancetop: Gets the top balance values.</p>
+<p> /ban: Bans a player.</p>
+<p> /ban-ip: A Mojang provided command.</p>
+<p> /banip: Bans an IP address.</p>
+<p> /banlist: A Mojang provided command.</p>
+<p> /bannedcommands: Shows a list of commands for the banned commands
+feature.</p>
+<p> /beezooka: Throw an exploding bee at your opponent.</p>
+<p> /bigtree: Spawn a big tree where you are looking.</p>
+<p> /biomeinfo: Get the biome of the targeted block.</p>
+<p> /biomelist: Gets all biomes available.</p>
+<p> /bluemap: 
+</p>
+<p> /bme: main command</p>
+<p> /book: Allows reopening and editing of sealed books.</p>
+<p> /bossbar: A Mojang provided command.</p>
+<p> /bottom: Teleport to the lowest block at your current position.</p>
+<p> /break: Breaks the block you are looking at.</p>
+<p> /broadcast: Broadcasts a message to the entire server.</p>
+<p> /broadcastworld: Broadcasts a message to a world.</p>
+<p> /brush: Brushing commands</p>
+<p> /bukkit:help: Shows the help menu</p>
+<p> /burn: Set a player on fire.</p>
+<p> /butcher: Kill all or nearby mobs</p>
+<p> /callback: ClickEvent callback</p>
+<p> /cartographytable: Opens up a cartography table.</p>
+<p> /cbap: 
+</p>
+<p> /cctv: Main command</p>
+<p> /ceil: Go to the ceiling</p>
+<p> /chatmanager: Main command for the plugin chat manager.</p>
+<p> /chatmanager:broadcast: Broadcast a message to the entire server.</p>
+<p> /chatmanager:list: Shows a list of all the players online.</p>
+<p> /chatmanager:ping: Shows your current ping, or other players
+ping.</p>
+<p> /chatmanager:rules: Shows a list of the server rules</p>
+<p> /chatmanager:socialspy: Spy on players and see what they message
+to other players.</p>
+<p> /chatradius: Chat radius command.</p>
+<p> /chunkinfo: Get information about the chunk you're inside</p>
+<p> /chunky: Generates chunks</p>
+<p> /citizens: Administration commands</p>
+<p> /clearchat: Clears chat for everyone on the server.</p>
+<p> /clearclipboard: Clear your clipboard</p>
+<p> /clearhistory: Clear your history</p>
+<p> /clearinventory: Clear all items in your inventory.</p>
+<p> /clearinventoryconfirmtoggle: Toggles whether you are prompted to
+confirm inventory clears.</p>
+<p> /clone: A Mojang provided command.</p>
+<p> /colors: Shows a list of color codes.</p>
+<p> /commandspy: See what commands every player types on the server.</p>
+<p> /compass: Describes your current bearing.</p>
+<p> /condense: Condenses items into a more compact blocks.</p>
+<p> /copydisguise: Output a disguise to a usable string</p>
+<p> /createkit: Create a kit in game!</p>
+<p> /cs: Execute a CraftScript</p>
+<p> /customtext: Allows you to create custom text commands.</p>
+<p> /cycler: Block data cycler tool</p>
+<p> /damage: A Mojang provided command.</p>
+<p> /data: A Mojang provided command.</p>
+<p> /datapack: A Mojang provided command.</p>
+<p> /debug: A Mojang provided command.</p>
+<p> /defaultgamemode: A Mojang provided command.</p>
+<p> /delchunks: Delete chunks that your selection includes</p>
+<p> /delhome: Removes a home.</p>
+<p> /deljail: Removes a jail.</p>
+<p> /delkit: Deletes the specified kit.</p>
+<p> /deltree: Floating tree remover tool</p>
+<p> /deluxemenus: DeluxeMenus main commands</p>
+<p> /delwarp: Deletes the specified warp.</p>
+<p> /deop: A Mojang provided command.</p>
+<p> /depth: States current depth, relative to sea level.</p>
+<p> /descend: Go down a floor</p>
+<p> /difficulty: A Mojang provided command.</p>
+<p> /discord: DiscordSRV commands</p>
+<p> /disguise: Disguise yourself as an entity.</p>
+<p> /disguiseclone: Copy a disguise (or entity) and use it later.</p>
+<p> /disguiseentity: Disguise an entity as another entity.</p>
+<p> /disguisehelp: Help command for LibsDisguises.</p>
+<p> /disguisemodify: Modify your own disguise</p>
+<p> /disguisemodifyentity: Modify a disguise by right clicking them</p>
+<p> /disguisemodifyplayer: Modify the disguise of a player</p>
+<p> /disguisemodifyradius: Modify disguises in a radius</p>
+<p> /disguiseplayer: Disguise another player as an entity.</p>
+<p> /disguiseradius: Disguise all entities within a radius as an
+entity.</p>
+<p> /disguiseviewbar: Toggle seeing your own disguise on or off.</p>
+<p> /disguiseviewself: Toggle seeing your own disguise on or off.</p>
+<p> /disposal: Opens a portable disposal menu.</p>
+<p> /dmap: List and modify dynmap configuration</p>
+<p> /dmarker: Manipulate map markers</p>
+<p> /download: Downloads your clipboard through the configured web
+interface</p>
+<p> /dynmap: Controls Dynmap.</p>
+<p> /dynmapexp: Map export commands</p>
+<p> /eco: Manages the server economy.</p>
+<p> /editsign: Edits a sign in the world.</p>
+<p> /effect: A Mojang provided command.</p>
+<p> /enchant: Enchants the item the user is holding.</p>
+<p> /enderchest: Lets you see inside an enderchest.</p>
+<p> /endersee: View a player's ender chest</p>
+<p> /essentials: Reloads essentials.</p>
+<p> /essentials:god: Enables your godly powers.</p>
+<p> /essentials:heal: Heals you or the given player.</p>
+<p> /essentials:info: Shows information set by the server owner.</p>
+<p> /essentials:remove: Removes entities in your world.</p>
+<p> /essentials:tree: Spawn a tree where you are looking.</p>
+<p> /execute: A Mojang provided command.</p>
+<p> /exp: Give, set, reset, or look at a players experience.</p>
+<p> /experience: A Mojang provided command.</p>
+<p> /ext: Extinguish players.</p>
+<p> /extinguish: Extinguish nearby fire</p>
+<p> /farwand: Wand at a distance tool</p>
+<p> /feed: Satisfy the hunger.</p>
+<p> /fill: A Mojang provided command.</p>
+<p> /fillbiome: A Mojang provided command.</p>
+<p> /filter: Add or remove programmable filters to the packet
+listeners.</p>
+<p> /fireball: Throw a fireball or other assorted projectiles.</p>
+<p> /firework: Allows you to modify a stack of fireworks.</p>
+<p> /fixlava: Fix lava to be stationary</p>
+<p> /fixwater: Fix water to be stationary</p>
+<p> /floodfill: Flood fill tool</p>
+<p> /fly: Take off, and soar!</p>
+<p> /forceload: A Mojang provided command.</p>
+<p> /forestgen: Generate a forest</p>
+<p> /formats: Shows a list of format codes.</p>
+<p> /function: A Mojang provided command.</p>
+<p> /gamemode: Change player gamemode.</p>
+<p> /gamerule: A Mojang provided command.</p>
+<p> /gbellyflop: BellyFlop command</p>
+<p> /gc: Reports memory, uptime and tick info.</p>
+<p> /gcrawl: Crawl command</p>
+<p> /gemote: Emote command</p>
+<p> /getpos: Get your current coordinates or those of a player.</p>
+<p> /geyser: The main command for Geyser.</p>
+<p> /give: Give a player an item.</p>
+<p> /glay: Lay command</p>
+<p> /gmask: Set the global mask</p>
+<p> /god: [player] - Enable godmode on a player</p>
+<p> /grabhead: Grab the head item of a skin, url or player</p>
+<p> /grabskin: Grab a skin from file, url or player name/uuid</p>
+<p> /green: Converts dirt to grass blocks in the area</p>
+<p> /grindstone: Opens up a grindstone.</p>
+<p> /gsit: Sit command</p>
+<p> /gsitreload: Plugin reload command</p>
+<p> /gspin: Spin command</p>
+<p> /halt-activity: [confirm] - Attempts to cease as much activity in
+order to stop lag</p>
+<p> /hat: Get some cool new headgear.</p>
+<p> /headpat: Allows you to give a headpat to someone! Perfect for
+thanking someone for helping you out!</p>
+<p> /heal: [player] - Heal a player</p>
+<p> /help: Views a list of available commands.</p>
+<p> /helpop: Message online admins.</p>
+<p> /home: Teleport to your home.</p>
+<p> /hug: Allows you to give a hug to someone! Maybe they've done you
+a favour or you just want to show some love!</p>
+<p> /ice: Cools a player off.</p>
+<p> /ignore: Ignore or unignore other players.</p>
+<p> /image: Manage custom images.</p>
+<p> /info: Block information tool</p>
+<p> /inspect: Inspect edits within a radius</p>
+<p> /invsee: See the inventory of other players.</p>
+<p> /invseeplusplus:invsee: View a player's inventory</p>
+<p> /item: Spawn an item.</p>
+<p> /itemdb: Searches for an item.</p>
+<p> /itemlore: Edit the lore of an item.</p>
+<p> /itemname: Names an item.</p>
+<p> /jails: List all jails.</p>
+<p> /jfr: A Mojang provided command.</p>
+<p> /jump: Jumps to the nearest block in the line of sight.</p>
+<p> /jumpto: Teleport to a location</p>
+<p> /kick: Kicks a specified player with a reason.</p>
+<p> /kickall: Kicks all players off the server except the issuer.</p>
+<p> /kill: Kills specified player.</p>
+<p> /kiss: Allows you to give someone a kiss! Keep this for that
+special someone! *wink wink*</p>
+<p> /kit: Obtains the specified kit or views all available kits.</p>
+<p> /kitreset: Resets the cooldown on the specified kit.</p>
+<p> /kittycannon: Throw an exploding kitten at your opponent.</p>
+<p> /lac: LoginSecurity Admin command.</p>
+<p> /libsdisguises: Main command for libsdisguises.</p>
+<p> /lightning: The power of Thor. Strike at cursor or player.</p>
+<p> /list: List all online players.</p>
+<p> /listchunks: List chunks that your selection includes</p>
+<p> /locate: [player] - Locate a player</p>
+<p> /logout: Log out of your account.</p>
+<p> /loom: Opens up a loom.</p>
+<p> /loot: A Mojang provided command.</p>
+<p> /lrbuild: Long-range building tool</p>
+<p> /luckperms: Manage permissions</p>
+<p> /mail: Manages inter-player, intra-server mail.</p>
+<p> /mask: Set the brush destination mask</p>
+<p> /material: Set the brush material</p>
+<p> /mcg: MCG Supportive commands</p>
+<p> /me: Describes an action in the context of the player.</p>
+<p> /message: Sends a private message to the specified player.</p>
+<p> /minecraft:ban: A Mojang provided command.</p>
+<p> /minecraft:clear: A Mojang provided command.</p>
+<p> /minecraft:enchant: A Mojang provided command.</p>
+<p> /minecraft:gamemode: A Mojang provided command.</p>
+<p> /minecraft:give: A Mojang provided command.</p>
+<p> /minecraft:help: A Mojang provided command.</p>
+<p> /minecraft:item: A Mojang provided command.</p>
+<p> /minecraft:kick: A Mojang provided command.</p>
+<p> /minecraft:kill: A Mojang provided command.</p>
+<p> /minecraft:list: A Mojang provided command.</p>
+<p> /minecraft:locate: A Mojang provided command.</p>
+<p> /minecraft:me: A Mojang provided command.</p>
+<p> /minecraft:msg: A Mojang provided command.</p>
+<p> /minecraft:pardon: A Mojang provided command.</p>
+<p> /minecraft:recipe: A Mojang provided command.</p>
+<p> /minecraft:reload: A Mojang provided command.</p>
+<p> /minecraft:return: A Mojang provided command.</p>
+<p> /minecraft:teleport: A Mojang provided command.</p>
+<p> /minecraft:tell: A Mojang provided command.</p>
+<p> /minecraft:time: A Mojang provided command.</p>
+<p> /minecraft:tm: A Mojang provided command.</p>
+<p> /minecraft:tp: A Mojang provided command.</p>
+<p> /minecraft:w: A Mojang provided command.</p>
+<p> /minecraft:weather: A Mojang provided command.</p>
+<p> /minecraft:xp: A Mojang provided command.</p>
+<p> /minetopiavehicles: 
+</p>
+<p> /mobnotarget:target: Enabled/Disable DeathBan Mode</p>
+<p> /more: Fills the item stack in hand to specified amount, or to
+maximum size if none is specified.</p>
+<p> /motd: Views the Message Of The Day.</p>
+<p> /msg: Sends a private message to the specified player.</p>
+<p> /msgtoggle: Blocks receiving all private messages.</p>
+<p> /mspt: View server tick times</p>
+<p> /mute: Mutes or unmutes a player.</p>
+<p> /mutechat: Mutes the server chat preventing players from talking
+in chat.</p>
+<p> /mv: Generic Multiverse Command</p>
+<p> /mvanchors: Creating and removing Anchors command</p>
+<p> /mvcheck: Validate your multiverse settings command</p>
+<p> /mvclone: World clone command</p>
+<p> /mvconfig: Configuration command</p>
+<p> /mvconfirm: Confirms sensitive decisions like deleting a world.</p>
+<p> /mvcoord: Display World, Coordinates, Direction &amp; Compression
+for a world.</p>
+<p> /mvcreate: World create command</p>
+<p> /mvdebug: Turns on debugging.</p>
+<p> /mvdelete: Delete world from server folders command</p>
+<p> /mvenv: Tells the user all possible environment types.</p>
+<p> /mvgamerule: Sets a gamerule.</p>
+<p> /mvgamerules: Lists the gamerules</p>
+<p> /mvgenerators: Displays all found world generators.</p>
+<p> /mvhelp: Displays the Multiverse Help.</p>
+<p> /mvimport: World import command</p>
+<p> /mvinfo: Gets world info.</p>
+<p> /mvlist: Print list of loaded Worlds</p>
+<p> /mvload: Loads a world into Multiverse.</p>
+<p> /mvmadd: Modify the settings of an existing world</p>
+<p> /mvmclear: Modify the settings of an existing world</p>
+<p> /mvmodify: Modify the settings of an existing world</p>
+<p> /mvmremove: Modify the settings of an existing world</p>
+<p> /mvmset: Modify the settings of an existing world</p>
+<p> /mvp: Generic Multiverse-Portals Command</p>
+<p> /mvpc: Generic Multiverse-Portals Command</p>
+<p> /mvpcreate: Generic Multiverse-Portals Command</p>
+<p> /mvpl: Generic Multiverse-Portals Command</p>
+<p> /mvplist: Generic Multiverse-Portals Command</p>
+<p> /mvpm: Generic Multiverse-Portals Command</p>
+<p> /mvpmodify: Generic Multiverse-Portals Command</p>
+<p> /mvpms: Generic Multiverse-Portals Command</p>
+<p> /mvpr: Generic Multiverse-Portals Command</p>
+<p> /mvpremove: Generic Multiverse-Portals Command</p>
+<p> /mvps: Generic Multiverse-Portals Command</p>
+<p> /mvpselect: Generic Multiverse-Portals Command</p>
+<p> /mvpurge: Purge the targetted world of creatures.</p>
+<p> /mvregen: Regenerates a world Multiverse already knows about.</p>
+<p> /mvreload: Reload Configuration files.</p>
+<p> /mvremove: Remove world from multiverse command</p>
+<p> /mvscript: Runs a script from the Multiverse scripts directory.</p>
+<p> /mvsetspawn: Set the spawn area for a particular world</p>
+<p> /mvsilent: Reduces startup messages</p>
+<p> /mvspawn: Teleport to the spawn area</p>
+<p> /mvtp: Command to teleport between Worlds</p>
+<p> /mvunload: World unload command</p>
+<p> /mvversion: Prints out version info.</p>
+<p> /mvwho: Display online users per world.</p>
+<p> /navwand: Navigation wand tool</p>
+<p> /near: Lists the players near by or around a player.</p>
+<p> /nick: Change your nickname or that of another player.</p>
+<p> /none: Unbind a bound tool from your current item</p>
+<p> /npc: Basic commands for all NPC-related things</p>
+<p> /nuke: May death rain upon them.</p>
+<p> /op: A Mojang provided command.</p>
+<p> /packet: Add or remove a simple packet listener.</p>
+<p> /packetlog: Logs hex representations of packets to a file or
+console</p>
+<p> /paper: Paper related commands</p>
+<p> /pardon-ip: A Mojang provided command.</p>
+<p> /particle: A Mojang provided command.</p>
+<p> /pay: Pays another player from your balance.</p>
+<p> /payconfirmtoggle: Toggles whether you are prompted to confirm
+payments.</p>
+<p> /paytoggle: Toggles whether you are accepting payments.</p>
+<p> /perf: A Mojang provided command.</p>
+<p> /perworldchat: Allow players to see what you type in chat in
+every world.</p>
+<p> /ping: Pong!</p>
+<p> /place: A Mojang provided command.</p>
+<p> /placeholderapi: PlaceholderAPI Command</p>
+<p> /playsound: A Mojang provided command.</p>
+<p> /playtime: Shows a player's time played in game</p>
+<p> /pluginconstructorapi: Useful for accessing features for
+pluginconstructor while in-game</p>
+<p> /plugins: Gets a list of plugins running on the server</p>
+<p> /potion: Adds custom potion effects to a potion.</p>
+<p> /powertool: Assigns a command to the item in hand.</p>
+<p> /powertooltoggle: Enables or disables all current powertools.</p>
+<p> /primary: Set the right click brush</p>
+<p> /protocol: Performs administrative tasks regarding ProtocolLib.</p>
+<p> /ptime: Adjust player's client time. Add @ prefix to fix.</p>
+<p> /pumpkins: Generate pumpkin patches</p>
+<p> /pweather: Adjust a player's weather</p>
+<p> /r: Quickly reply to the last player to message you.</p>
+<p> /random: A Mojang provided command.</p>
+<p> /range: Set the brush range</p>
+<p> /realname: Displays the username of a user based on nick.</p>
+<p> /recipe: Displays how to craft items.</p>
+<p> /redo: Redoes the last action (from history)</p>
+<p> /region: Region management commands</p>
+<p> /reload: Reloads the server configuration and plugins</p>
+<p> /remove: Remove all entities of a type</p>
+<p> /removeabove: Remove blocks above your head.</p>
+<p> /removebelow: Remove blocks below you.</p>
+<p> /removenear: Remove blocks near you.</p>
+<p> /renamehome: Renames a home.</p>
+<p> /repair: Repairs the durability of one or all items.</p>
+<p> /repl: Block replacer tool</p>
+<p> /replacenear: Replace nearby blocks</p>
+<p> /reply: Quickly reply to the last player to message you.</p>
+<p> /rest: Rests you or the given player.</p>
+<p> /restart: Restarts the server</p>
+<p> /restore: Restore the selection from a snapshot</p>
+<p> /ride: A Mojang provided command.</p>
+<p> /rtoggle: Change whether the recipient of the reply is last
+recipient or last sender</p>
+<p> /rules: Views the server rules.</p>
+<p> /save-all: A Mojang provided command.</p>
+<p> /save-off: A Mojang provided command.</p>
+<p> /save-on: A Mojang provided command.</p>
+<p> /savedisguise: Save a custom disguise to disguises.yml</p>
+<p> /say: A Mojang provided command.</p>
+<p> /schedule: A Mojang provided command.</p>
+<p> /schematic: Schematic commands for saving/loading areas</p>
+<p> /scoreboard: A Mojang provided command.</p>
+<p> /script: Scripting commands</p>
+<p> /scroll: Toggle between different target modes</p>
+<p> /searchitem: Search for an item</p>
+<p> /secondary: Set the left click brush</p>
+<p> /seed: A Mojang provided command.</p>
+<p> /seen: Shows the last logout time of a player.</p>
+<p> /sell: Sells the item currently in your hand.</p>
+<p> /selwand: Selection wand tool</p>
+<p> /serverlist: Show list of commands</p>
+<p> /setblock: A Mojang provided command.</p>
+<p> /sethome: Set your home to your current location.</p>
+<p> /setidletimeout: A Mojang provided command.</p>
+<p> /setjail: Creates a jail where you specified named [jailname].</p>
+<p> /settpr: Set the random teleport location and parameters.</p>
+<p> /setwarp: Creates a new warp.</p>
+<p> /setworldspawn: A Mojang provided command.</p>
+<p> /setworth: Set the sell value of an item.</p>
+<p> /shopkeeper: Base for all shopkeeper commands.</p>
+<p> /showkit: Show contents of a kit.</p>
+<p> /size: Set the brush size</p>
+<p> /skin: 
+</p>
+<p> /skins: 
+</p>
+<p> /skinsrestorer: 
+</p>
+<p> /skjson: basic skjson</p>
+<p> /skript: Skript's main command. Type '/skript help' for more
+information.</p>
+<p> /skript:bankomat: 
+</p>
+<p> /skript:clearitems: 
+</p>
+<p> /skript:egg: 
+</p>
+<p> /skript:event: 
+</p>
+<p> /skript:jsontext: 
+</p>
+<p> /skript:lox: 
+</p>
+<p> /skript:menutp: 
+</p>
+<p> /skript:musorka: 
+</p>
+<p> /skript:nightv: 
+</p>
+<p> /skript:reloadd: 
+</p>
+<p> /skript:site: 
+</p>
+<p> /skript:smyv: 
+</p>
+<p> /skript:spawn: 
+</p>
+<p> /skript:stopp: 
+</p>
+<p> /skript:tpmenu: 
+</p>
+<p> /skull: Set the owner of a player skull</p>
+<p> /slap: Allows you to slap someone! Someone took your stuff?
+trampled your crops? It's payback time!</p>
+<p> /slay: [player] - Slay a player</p>
+<p> /smask: Set the brush source mask</p>
+<p> /smithingtable: Opens up a smithing table.</p>
+<p> /snapshot: Snapshot commands for restoring backups</p>
+<p> /snow: Simulates snow</p>
+<p> /socialspy: Toggles if you can see msg/mail commands in chat.</p>
+<p> /spawner: Change the mob type of a spawner.</p>
+<p> /spawnmob: Spawns a mob.</p>
+<p> /spawnpoint: A Mojang provided command.</p>
+<p> /spectate: A Mojang provided command.</p>
+<p> /speed: Change your speed limits.</p>
+<p> /spigot: Spigot related commands</p>
+<p> /spreadplayers: A Mojang provided command.</p>
+<p> /sr: 
+</p>
+<p> /stack: Stack items</p>
+<p> /stacker: Block stacker tool</p>
+<p> /staff: Shows a list of all the staff members online.</p>
+<p> /staffchat: Talk secretly to other staff members online.</p>
+<p> /statue: Make a player statue based on a certain model and in a
+certain orientation</p>
+<p> /stonecutter: Opens up a stonecutter.</p>
+<p> /stop: A Mojang provided command.</p>
+<p> /stopfire: [&lt;world&gt;] - Disables all fire spread temporarily</p>
+<p> /stopsound: A Mojang provided command.</p>
+<p> /sudo: Make another user perform a command.</p>
+<p> /suicide: Causes you to perish.</p>
+<p> /summon: A Mojang provided command.</p>
+<p> /superpickaxe: Super-pickaxe commands</p>
+<p> /tag: A Mojang provided command.</p>
+<p> /target: Toggle between different target modes</p>
+<p> /targetoffset: Set the targeting mask</p>
+<p> /team: A Mojang provided command.</p>
+<p> /teammsg: A Mojang provided command.</p>
+<p> /tellraw: A Mojang provided command.</p>
+<p> /tempban: Temporary ban a user.</p>
+<p> /tempbanip: Temporarily ban an IP Address.</p>
+<p> /template: Template commands</p>
+<p> /thaw: Thaws the area</p>
+<p> /thru: Pass through walls</p>
+<p> /thunder: Enable/disable thunder.</p>
+<p> /time: Display/Change the world time. Defaults to current world.</p>
+<p> /timings: Manages Spigot Timings data to see performance of the
+server.</p>
+<p> /title: A Mojang provided command.</p>
+<p> /togglechat: Blocks a player from receiving chat messages.</p>
+<p> /toggleeditwand: Remind the user that the wand is now a tool and
+can be unbound with /tool none.</p>
+<p> /togglejail: Jails/Unjails a player, TPs them to the jail
+specified.</p>
+<p> /togglementions: Blocks players from receiving mention
+notifications.</p>
+<p> /toggleplace: Switch between your position and pos1 for placement</p>
+<p> /togglepm: Blocks players from sending private messages to you.</p>
+<p> /toggleshout: Toggles whether you are talking in shout mode</p>
+<p> /top: Teleport to the highest block at your current position.</p>
+<p> /tp: Teleport to a player.</p>
+<p> /tpa: Request to teleport to the specified player.</p>
+<p> /tpaall: Requests all players online to teleport to you.</p>
+<p> /tpacancel: Cancel all outstanding teleport requests. Specify
+[player] to cancel requests with them.</p>
+<p> /tpaccept: Accepts teleport requests.</p>
+<p> /tpahere: Request that the specified player teleport to you.</p>
+<p> /tpall: Teleport all online players to another player.</p>
+<p> /tpauto: Automatically accept teleportation requests.</p>
+<p> /tpdeny: Rejects teleport requests.</p>
+<p> /tphere: Teleport a player to you.</p>
+<p> /tpo: Teleport override for tptoggle.</p>
+<p> /tpoffline: Teleport to a player's last known logout location</p>
+<p> /tpohere: Teleport here override for tptoggle.</p>
+<p> /tppos: Teleport to coordinates.</p>
+<p> /tpr: Teleport randomly.</p>
+<p> /tps: Gets the current ticks per second for the server</p>
+<p> /tptoggle: Blocks all forms of teleportation.</p>
+<p> /tracemask: Set the mask used to stop tool traces</p>
+<p> /trait: Trait commands</p>
+<p> /traitc: Configures traits</p>
+<p> /transform: Set the brush transform</p>
+<p> /tree: Tree generator tool</p>
+<p> /trigger: A Mojang provided command.</p>
+<p> /unban: Unbans the specified player.</p>
+<p> /unbanip: Unbans the specified IP address.</p>
+<p> /undisguise: Undisguise yourself.</p>
+<p> /undisguiseentity: Undisguise an entity.</p>
+<p> /undisguiseplayer: Undisguise a player.</p>
+<p> /undisguiseradius: Undisguise all entities within a radius.</p>
+<p> /undo: Undoes the last action (from history)</p>
+<p> /undostatue: Undo the last statue created by ANYONE on the server</p>
+<p> /ungod: [player] - Disable godmode on a player</p>
+<p> /unlimited: Allows the unlimited placing of items.</p>
+<p> /unregister: Unregister your account.</p>
+<p> /unstuck: Escape from being stuck inside a block</p>
+<p> /up: Go upwards some distance</p>
+<p> /vanish: Hide yourself from other players.</p>
+<p> /vault-convert: Converts all data in economy1 and dumps it into
+economy2</p>
+<p> /vault-info: Displays information about Vault</p>
+<p> /version: Gets the version of this server including any plugins
+in use</p>
+<p> /viaversion: Shows ViaVersion Version and more.</p>
+<p> /warning: Sends a warning message to the entire server.</p>
+<p> /warp: List all warps or warp to the specified location.</p>
+<p> /warpinfo: Finds location information for a specified warp.</p>
+<p> /waypoint: Waypoint commands</p>
+<p> /weather: Sets the weather.</p>
+<p> /whitelist: A Mojang provided command.</p>
+<p> /whois: Determine the username behind a nickname.</p>
+<p> /workbench: Opens up a workbench.</p>
+<p> /world: Switch between worlds.</p>
+<p> /worldborder: A Mojang provided command.</p>
+<p> /worldedit: WorldEdit commands</p>
+<p> /worldguard: WorldGuard commands</p>
+<p> /worth: Calculates the worth of items in hand or as specified.</p>
+<p><a href="./index.html">
+	<button class="button">Назад</button>
+</a>
+</p>
 </body>
-<p>
-      <a href="./index.html">
-          <button class="button">Назад</button>
-      </a>
-      <p>
-
 </html>
