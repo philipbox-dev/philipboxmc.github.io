@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.6.2.1 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2023-11-10T15:42:20.773247085"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="created" content="00:00:00">
+	<style type="text/css">
+		h1 { color: #000000; margin-left: 2cm; margin-right: 2cm }
+		h1.cjk { font-family: "apple-system", "BlinkMacSystemFont", sans-serif }
+		h1.ctl { font-family: "apple-system", "BlinkMacSystemFont", sans-serif }
+		p { color: #000000; font-family: "apple-system", "BlinkMacSystemFont", sans-serif; margin-left: 2cm; margin-right: 2cm }
+		h2 { color: #000000; margin-left: 2cm; margin-right: 2cm }
+		h2.cjk { font-family: "Droid Sans Fallback" }
+		h2.ctl { font-family: "Droid Sans Devanagari" }
+		h3 { color: #000000; margin-left: 2cm; margin-right: 2cm }
+		h3.cjk { font-family: "Droid Sans Fallback" }
+		h3.ctl { font-family: "Droid Sans Devanagari" }
+		p.standard { font-family: "Liberation Serif"; direction: ltr }
+		h1 { color: #000000; margin-left: 2cm; margin-right: 2cm }
+		p { color: #000000; margin-left: 2cm; margin-right: 2cm }
+		h2 { color: #000000; margin-left: 2cm; margin-right: 2cm }
+		h2.cjk { font-family: "Droid Sans Fallback" }
+		h2.ctl { font-family: "Droid Sans Devanagari" }
+		h3 { color: #000000; margin-left: 2cm; margin-right: 2cm }
+		h3.cjk { font-family: "Droid Sans Fallback" }
+		h3.ctl { font-family: "Droid Sans Devanagari" }
+		p.standard { font-family: "Liberation Serif"; font-size: 12pt; direction: ltr }
+		.button {
+                background-color: #008CBA; /* Green */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+              }
+		body {
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+		@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+	</style>
+</head>
+<div>
+	<div class="wave"></div>
+	<div class="wave"></div>
+	<div class="wave"></div>
+ </div>
+<body lang="en-GB" text="#000000" dir="ltr" style="border: none; padding: 0cm"><h1 class="western" style="margin-left: 0cm; margin-right: 0cm">
+Команды для игроков на Сервере:</h1>
+<h2 class="western" style="margin-left: 0cm; margin-right: 0cm">Команды
+Меню:</h2>
+<p class="standard">- /menutp &nbsp;/tpmenu</p>
+<p class="standard">- /bankomat</p>
+<p class="standard">- /musorka</p>
+<p class="standard">- /egg</p>
+<p class="standard">- /site</p>
+<p class="standard">- /nightviz</p>
+<p class="standard">- ~Скоро~</p>
+<p class="standard">- ~Скоро~</p>
+<p class="standard">- ~Скоро~</p>
+<h2 class="western">Warp-команды:</h2>
+<p class="standard">- /warp lobby</p>
+<p class="standard">- /warp spawn</p>
+<p class="standard">- /warp musorka</p>
+<p class="standard">- /warp secret</p>
+<p class="standard">- /warp brrskibididopdop</p>
+<p class="standard">- ~скоро!~</p>
+<h2 class="western">Команды косаемые денег:</h2>
+<p class="standard">- /bankomat</p>
+<p class="standard">- /pay</p>
+<p class="standard">- /balance</p>
+<h2 class="western">Команды чат:</h2>
+<p class="standard">&nbsp;- /say (текст)</p>
+<p class="standard">&nbsp;- /tell (Игрок) (текст)</p>
+<p class="standard">&nbsp;- /near (радиус) (текст)</p>
+<h3 class="western">Секретные команды;)</h3>
+<p class="standard">- /kittycannon</p>
+<p class="standard">- /beecannon</p>
+<p class="standard">- /f</p>
+<p class="standard">- /lox</p>
+<p class="standard">- /beezooka</p>
+<h2 class="western">Остальные команды:</h2>
+<p class="standard">&nbsp;</p>
+<p class="standard">&nbsp;</p>
+<p class="standard">****V - vip****</p>
+<p class="standard">&nbsp;</p>
+<p class="standard">&nbsp; - afk</p>
+<p class="standard">&nbsp; - afk.auto</p>
+<p class="standard">&nbsp; - back</p>
+<p class="standard">&nbsp; - back.ondeath</p>
+<p class="standard">&nbsp; - balance</p>
+<p class="standard">&nbsp; - balance.others</p>
+<p class="standard">&nbsp; - balancetop</p>
+<p class="standard">&nbsp; - build &nbsp;VIP</p>
+<p class="standard">&nbsp; - chat.color</p>
+<p class="standard">&nbsp; - chat.format</p>
+<p class="standard">&nbsp; - chat.shout</p>
+<p class="standard">&nbsp; - chat.question</p>
+<p class="standard">&nbsp; - clearinventory</p>
+<p class="standard">&nbsp; - compass</p>
+<p class="standard">&nbsp; - depth</p>
+<p class="standard">&nbsp; - delhome</p>
+<p class="standard">&nbsp; - getpos</p>
+<p class="standard">&nbsp; - geoip.show</p>
+<p class="standard">&nbsp; - help</p>
+<p class="standard">&nbsp; - helpop</p>
+<p class="standard">&nbsp; - home</p>
+<p class="standard">&nbsp; - home.others VIP</p>
+<p class="standard">&nbsp; - ignore</p>
+<p class="standard">&nbsp; - info</p>
+<p class="standard">&nbsp; - itemdb VIP</p>
+<p class="standard">&nbsp; - kit</p>
+<p class="standard">&nbsp; - kits.tools</p>
+<p class="standard">&nbsp; - list</p>
+<p class="standard">&nbsp; - mail</p>
+<p class="standard">&nbsp; - mail.send</p>
+<p class="standard">&nbsp; - me</p>
+<p class="standard">&nbsp; - motd</p>
+<p class="standard">&nbsp; - msg</p>
+<p class="standard">&nbsp; - msg.color VIP</p>
+<p class="standard">&nbsp; - nick</p>
+<p class="standard">&nbsp; - near</p>
+<p class="standard">&nbsp; - pay</p>
+<p class="standard">&nbsp; - ping</p>
+<p class="standard">&nbsp; - protect VIP</p>
+<p class="standard">&nbsp; - r</p>
+<p class="standard">&nbsp; - rules</p>
+<p class="standard">&nbsp; - renamehome</p>
+<p class="standard">&nbsp; - realname</p>
+<p class="standard">&nbsp; - seen</p>
+<p class="standard">&nbsp; - sell</p>
+<p class="standard">&nbsp; - sethome</p>
+<p class="standard">&nbsp; - setxmpp</p>
+<p class="standard">&nbsp;</p>
+<p class="standard">&nbsp;
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~VIP</p>
+<p class="standard">&nbsp; - signs.create.protection</p>
+<p class="standard">&nbsp; - signs.create.trade</p>
+<p class="standard">&nbsp; - signs.break.protection</p>
+<p class="standard">&nbsp; - signs.break.trade</p>
+<p class="standard">&nbsp; - signs.use.balance</p>
+<p class="standard">&nbsp; - signs.use.buy</p>
+<p class="standard">&nbsp; - signs.use.disposal</p>
+<p class="standard">&nbsp; - signs.use.enchant</p>
+<p class="standard">&nbsp; - signs.use.free</p>
+<p class="standard">&nbsp; - signs.use.gamemode</p>
+<p class="standard">&nbsp; - signs.use.heal</p>
+<p class="standard">&nbsp; - signs.use.info</p>
+<p class="standard">&nbsp; - signs.use.kit</p>
+<p class="standard">&nbsp; - signs.use.mail</p>
+<p class="standard">&nbsp; - signs.use.protection</p>
+<p class="standard">&nbsp; - signs.use.repair</p>
+<p class="standard">&nbsp; - signs.use.sell</p>
+<p class="standard">&nbsp; - signs.use.time</p>
+<p class="standard">&nbsp; - signs.use.trade</p>
+<p class="standard">&nbsp; - signs.use.warp</p>
+<p class="standard">&nbsp; - signs.use.weather</p>
+<p class="standard">&nbsp;
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~VIP</p>
+<p class="standard">&nbsp; - spawn</p>
+<p class="standard">&nbsp; - suicide</p>
+<p class="standard">&nbsp; - time</p>
+<p class="standard">&nbsp; - tpa</p>
+<p class="standard">&nbsp; - tpaccept</p>
+<p class="standard">&nbsp; - tpahere</p>
+<p class="standard">&nbsp; - tpdeny</p>
+<p class="standard">&nbsp; - warp</p>
+<p class="standard">&nbsp; - warp.list</p>
+<p class="standard">&nbsp; - world</p>
+<p class="standard">&nbsp; - worth</p>
+<p class="standard">&nbsp; - xmpp</p>
+<h1 class="western">ВСЕ КОМАНДЫ:</h1>
+<p> /.s: Execute last CraftScript</p>
+<p> //: Toggle the super pickaxe function</p>
+<p> //air: Sets all the blocks in the region to air</p>
+<p> //blob: Creates a distorted sphere</p>
+<p> //calculate: Evaluate a mathematical expression</p>
+<p> //cancel: Cancel your current command</p>
+<p> //caves: Generates a cave network</p>
+<p> //center: Set the center block(s)</p>
+<p> //chunk: Set the selection to your current chunk.</p>
+<p> //cone: Generates a cone.</p>
+<p> //confirm: Confirm a command</p>
+<p> //contract: Contract the selection area</p>
+<p> //copy: Copy the selection to the clipboard</p>
+<p> //count: Counts the number of blocks matching a mask</p>
+<p> //curve: Draws a spline through selected points</p>
+<p> //cut: Cut the selection to the clipboard</p>
+<p> //cyl: Generates a cylinder.</p>
+<p> //deform: Deforms a selected region with an expression</p>
+<p> //distr: Get the distribution of blocks in the selection</p>
+<p> //drain: Drain a pool</p>
+<p> //drawsel: Toggle drawing the current selection</p>
+<p> //expand: Expand the selection area</p>
+<p> //faces: Build the walls, ceiling, and floor of a selection</p>
+<p> //fall: Have the blocks in the selection fall</p>
+<p> //fast: Toggle fast mode</p>
+<p> //fill: Fill a hole</p>
+<p> //fillr: Fill a hole recursively</p>
+<p> //fixlighting: Get the light at a position</p>
+<p> //flip: Flip the contents of the clipboard across the origin</p>
+<p> //flora: Make flora within the region</p>
+<p> //forest: Make a forest within the region</p>
+<p> //generate: Generates a shape according to a formula.</p>
+<p> //generatebiome: Sets biome according to a formula.</p>
+<p> //gsmask: Set the global source mask</p>
+<p> //gtexture: Set the global mask</p>
+<p> //gtransform: Set the global transform</p>
+<p> //hcyl: Generates a hollow cylinder.</p>
+<p> //heightmapinterface: Generate the heightmap interface:
+https://github.com/IntellectualSites/HeightMap</p>
+<p> //help: Displays help for WorldEdit commands</p>
+<p> //history: Manage your history</p>
+<p> //hollow: Hollows out the object contained in this selection</p>
+<p> //hpos1: Set position 1 to targeted block</p>
+<p> //hpos2: Set position 2 to targeted block</p>
+<p> //hpyramid: Generate a hollow pyramid</p>
+<p> //hsphere: Generates a hollow sphere.</p>
+<p> //img: Generate an image</p>
+<p> //inset: Inset the selection area</p>
+<p> //lay: Set the top block in the region</p>
+<p> //lazycopy: Lazily copy the selection to the clipboard</p>
+<p> //limit: Modify block change limit</p>
+<p> //line: Draws line segments between cuboid selection corners or
+convex polyhedral selection vertices</p>
+<p> //macro: Generate or run a macro</p>
+<p> //move: Move the contents of the selection</p>
+<p> //naturalize: 3 layers of dirt on top then rock below</p>
+<p> //nbtinfo: View nbt info for a block</p>
+<p> //ore: Generates ores</p>
+<p> //ores: Generates ores</p>
+<p> //outset: Outset the selection area</p>
+<p> //overlay: Set a block on top of blocks in the region</p>
+<p> //paste: Paste the clipboard's contents</p>
+<p> //perf: Toggle side effects for performance</p>
+<p> //place: Place the clipboard's contents without applying
+transformations (e.g. rotate)</p>
+<p> //pos1: Set position 1</p>
+<p> //pos2: Set position 2</p>
+<p> //pyramid: Generate a filled pyramid</p>
+<p> //regen: Regenerates the contents of the selection</p>
+<p> //removelighting: Removing lighting in a selection</p>
+<p> //reorder: Sets the reorder mode of WorldEdit</p>
+<p> //replace: Replace all blocks in the selection with another</p>
+<p> //rotate: Rotate the contents of the clipboard</p>
+<p> //sel: Choose a region selector</p>
+<p> //set: Sets all the blocks in the region</p>
+<p> //setbiome: Sets the biome of your current block or region.</p>
+<p> //setblocklight: Set block lighting in a selection</p>
+<p> //setskylight: Set sky lighting in a selection</p>
+<p> //shift: Shift the selection area</p>
+<p> //size: Get information about the selection</p>
+<p> //smooth: Smooth the elevation in the selection</p>
+<p> //snowsmooth: Smooth the elevation in the selection with snow
+layers</p>
+<p> //sphere: Generates a filled sphere.</p>
+<p> //stack: Repeat the contents of the selection</p>
+<p> //test: test region</p>
+<p> //timeout: Modify evaluation timeout time.</p>
+<p> //tips: Toggle FAWE tips</p>
+<p> //walls: Build the four sides of the selection</p>
+<p> //wand: Get the wand object</p>
+<p> //watchdog: Changes watchdog hook state.</p>
+<p> //wea: Bypass region restrictions</p>
+<p> //wer: Select your current allowed region</p>
+<p> //world: Sets the world override</p>
+<p> /advancement: A Mojang provided command.</p>
+<p> /afk: Marks you as away-from-keyboard.</p>
+<p> /allowfire: [&lt;world&gt;] - Allows all fire spread temporarily</p>
+<p> /announcement: Announce a message to the entire server.</p>
+<p> /antioch: A little surprise for operators.</p>
+<p> /antiswear: Shows a list of commands for the anti-swear feature.</p>
+<p> /anvil: Opens up an anvil.</p>
+<p> /ascend: Go up a floor</p>
+<p> /attribute: A Mojang provided command.</p>
+<p> /autobroadcast: Shows a list of commands for the auto broadcast
+feature.</p>
+<p> /back: Teleports you to your location prior to tp/spawn/warp.</p>
+<p> /backpack: 
+</p>
+<p> /backup: Runs the backup if configured.</p>
+<p> /balance: States the current balance of a player.</p>
+<p> /balancetop: Gets the top balance values.</p>
+<p> /ban: Bans a player.</p>
+<p> /ban-ip: A Mojang provided command.</p>
+<p> /banip: Bans an IP address.</p>
+<p> /banlist: A Mojang provided command.</p>
+<p> /bannedcommands: Shows a list of commands for the banned commands
+feature.</p>
+<p> /beezooka: Throw an exploding bee at your opponent.</p>
+<p> /bigtree: Spawn a big tree where you are looking.</p>
+<p> /biomeinfo: Get the biome of the targeted block.</p>
+<p> /biomelist: Gets all biomes available.</p>
+<p> /book: Allows reopening and editing of sealed books.</p>
+<p> /bossbar: A Mojang provided command.</p>
+<p> /bottom: Teleport to the lowest block at your current position.</p>
+<p> /break: Breaks the block you are looking at.</p>
+<p> /broadcast: Broadcasts a message to the entire server.</p>
+<p> /broadcastworld: Broadcasts a message to a world.</p>
+<p> /brush: Brushing commands</p>
+<p> /bukkit:help: Shows the help menu</p>
+<p> /burn: Set a player on fire.</p>
+<p> /butcher: Kill all or nearby mobs</p>
+<p> /calendar: Calendar command</p>
+<p> /callback: ClickEvent callback</p>
+<p> /cartographytable: Opens up a cartography table.</p>
+<p> /cbap: 
+</p>
+<p> /cctv: Main command</p>
+<p> /ceil: Go to the ceiling</p>
+<p> /changepassword: Change your account password.</p>
+<p> /chatmanager: Main command for the plugin chat manager.</p>
+<p> /chatmanager:broadcast: Broadcast a message to the entire server.</p>
+<p> /chatmanager:list: Shows a list of all the players online.</p>
+<p> /chatmanager:ping: Shows your current ping, or other players
+ping.</p>
+<p> /chatmanager:rules: Shows a list of the server rules</p>
+<p> /chatmanager:socialspy: Spy on players and see what they message
+to other players.</p>
+<p> /chatradius: Chat radius command.</p>
+<p> /chunkinfo: Get information about the chunk you're inside</p>
+<p> /citizens: Administration commands</p>
+<p> /clearchat: Clears chat for everyone on the server.</p>
+<p> /clearclipboard: Clear your clipboard</p>
+<p> /clearhistory: Clear your history</p>
+<p> /clearinventory: Clear all items in your inventory.</p>
+<p> /clearinventoryconfirmtoggle: Toggles whether you are prompted to
+confirm inventory clears.</p>
+<p> /clone: A Mojang provided command.</p>
+<p> /colors: Shows a list of color codes.</p>
+<p> /commandspy: See what commands every player types on the server.</p>
+<p> /compass: Describes your current bearing.</p>
+<p> /condense: Condenses items into a more compact blocks.</p>
+<p> /copydisguise: Output a disguise to a usable string</p>
+<p> /createkit: Create a kit in game!</p>
+<p> /cs: Execute a CraftScript</p>
+<p> /customtext: Allows you to create custom text commands.</p>
+<p> /cycler: Block data cycler tool</p>
+<p> /damage: A Mojang provided command.</p>
+<p> /data: A Mojang provided command.</p>
+<p> /datapack: A Mojang provided command.</p>
+<p> /debug: A Mojang provided command.</p>
+<p> /defaultgamemode: A Mojang provided command.</p>
+<p> /delchunks: Delete chunks that your selection includes</p>
+<p> /delhome: Removes a home.</p>
+<p> /deljail: Removes a jail.</p>
+<p> /delkit: Deletes the specified kit.</p>
+<p> /deltree: Floating tree remover tool</p>
+<p> /deluxemenus: DeluxeMenus main commands</p>
+<p> /delwarp: Deletes the specified warp.</p>
+<p> /deop: A Mojang provided command.</p>
+<p> /depth: States current depth, relative to sea level.</p>
+<p> /descend: Go down a floor</p>
+<p> /difficulty: A Mojang provided command.</p>
+<p> /discord: DiscordSRV commands</p>
+<p> /disguise: Disguise yourself as an entity.</p>
+<p> /disguiseclone: Copy a disguise (or entity) and use it later.</p>
+<p> /disguiseentity: Disguise an entity as another entity.</p>
+<p> /disguisehelp: Help command for LibsDisguises.</p>
+<p> /disguisemodify: Modify your own disguise</p>
+<p> /disguisemodifyentity: Modify a disguise by right clicking them</p>
+<p> /disguisemodifyplayer: Modify the disguise of a player</p>
+<p> /disguisemodifyradius: Modify disguises in a radius</p>
+<p> /disguiseplayer: Disguise another player as an entity.</p>
+<p> /disguiseradius: Disguise all entities within a radius as an
+entity.</p>
+<p> /disguiseviewbar: Toggle seeing your own disguise on or off.</p>
+<p> /disguiseviewself: Toggle seeing your own disguise on or off.</p>
+<p> /disposal: Opens a portable disposal menu.</p>
+<p> /dmap: List and modify dynmap configuration</p>
+<p> /dmarker: Manipulate map markers</p>
+<p> /download: Downloads your clipboard through the configured web
+interface</p>
+<p> /dynmap: Controls Dynmap.</p>
+<p> /dynmapexp: Map export commands</p>
+<p> /eco: Manages the server economy.</p>
+<p> /editsign: Edits a sign in the world.</p>
+<p> /effect: A Mojang provided command.</p>
+<p> /enchant: Enchants the item the user is holding.</p>
+<p> /enderchest: Lets you see inside an enderchest.</p>
+<p> /essentials: Reloads essentials.</p>
+<p> /essentials:god: Enables your godly powers.</p>
+<p> /essentials:heal: Heals you or the given player.</p>
+<p> /essentials:info: Shows information set by the server owner.</p>
+<p> /essentials:remove: Removes entities in your world.</p>
+<p> /essentials:tree: Spawn a tree where you are looking.</p>
+<p> /execute: A Mojang provided command.</p>
+<p> /exp: Give, set, reset, or look at a players experience.</p>
+<p> /experience: A Mojang provided command.</p>
+<p> /ext: Extinguish players.</p>
+<p> /extinguish: Extinguish nearby fire</p>
+<p> /farwand: Wand at a distance tool</p>
+<p> /feed: Satisfy the hunger.</p>
+<p> /fill: A Mojang provided command.</p>
+<p> /fillbiome: A Mojang provided command.</p>
+<p> /filter: Add or remove programmable filters to the packet
+listeners.</p>
+<p> /fireball: Throw a fireball or other assorted projectiles.</p>
+<p> /firework: Allows you to modify a stack of fireworks.</p>
+<p> /fixlava: Fix lava to be stationary</p>
+<p> /fixwater: Fix water to be stationary</p>
+<p> /floodfill: Flood fill tool</p>
+<p> /fly: Take off, and soar!</p>
+<p> /forceload: A Mojang provided command.</p>
+<p> /forestgen: Generate a forest</p>
+<p> /formats: Shows a list of format codes.</p>
+<p> /function: A Mojang provided command.</p>
+<p> /gamemode: Change player gamemode.</p>
+<p> /gamerule: A Mojang provided command.</p>
+<p> /gbellyflop: BellyFlop command</p>
+<p> /gc: Reports memory, uptime and tick info.</p>
+<p> /gcrawl: Crawl command</p>
+<p> /gemote: Emote command</p>
+<p> /getpos: Get your current coordinates or those of a player.</p>
+<p> /give: Give a player an item.</p>
+<p> /glay: Lay command</p>
+<p> /gmask: Set the global mask</p>
+<p> /god: [player] - Enable godmode on a player</p>
+<p> /grabhead: Grab the head item of a skin, url or player</p>
+<p> /grabskin: Grab a skin from file, url or player name/uuid</p>
+<p> /green: Converts dirt to grass blocks in the area</p>
+<p> /grindstone: Opens up a grindstone.</p>
+<p> /gsit: Sit command</p>
+<p> /gsitreload: Plugin reload command</p>
+<p> /gspin: Spin command</p>
+<p> /halt-activity: [confirm] - Attempts to cease as much activity in
+order to stop lag</p>
+<p> /hat: Get some cool new headgear.</p>
+<p> /heal: [player] - Heal a player</p>
+<p> /help: Views a list of available commands.</p>
+<p> /helpop: Message online admins.</p>
+<p> /home: Teleport to your home.</p>
+<p> /ice: Cools a player off.</p>
+<p> /ignore: Ignore or unignore other players.</p>
+<p> /image: Manage custom images.</p>
+<p> /info: Block information tool</p>
+<p> /inspect: Inspect edits within a radius</p>
+<p> /invsee: See the inventory of other players.</p>
+<p> /item: Spawn an item.</p>
+<p> /itemdb: Searches for an item.</p>
+<p> /itemlore: Edit the lore of an item.</p>
+<p> /itemname: Names an item.</p>
+<p> /jails: List all jails.</p>
+<p> /jfr: A Mojang provided command.</p>
+<p> /jump: Jumps to the nearest block in the line of sight.</p>
+<p> /jumpto: Teleport to a location</p>
+<p> /kick: Kicks a specified player with a reason.</p>
+<p> /kickall: Kicks all players off the server except the issuer.</p>
+<p> /kill: Kills specified player.</p>
+<p> /kit: Obtains the specified kit or views all available kits.</p>
+<p> /kitreset: Resets the cooldown on the specified kit.</p>
+<p> /kittycannon: Throw an exploding kitten at your opponent.</p>
+<p> /lac: LoginSecurity Admin command.</p>
+<p> /libsdisguises: Main command for libsdisguises.</p>
+<p> /lightning: The power of Thor. Strike at cursor or player.</p>
+<p> /list: List all online players.</p>
+<p> /listchunks: List chunks that your selection includes</p>
+<p> /locate: [player] - Locate a player</p>
+<p> /login: Login with your account.</p>
+<p> /logout: Log out of your account.</p>
+<p> /loom: Opens up a loom.</p>
+<p> /loot: A Mojang provided command.</p>
+<p> /lrbuild: Long-range building tool</p>
+<p> /luckperms: Manage permissions</p>
+<p> /mail: Manages inter-player, intra-server mail.</p>
+<p> /mask: Set the brush destination mask</p>
+<p> /material: Set the brush material</p>
+<p> /me: Describes an action in the context of the player.</p>
+<p> /message: Sends a private message to the specified player.</p>
+<p> /minecraft:ban: A Mojang provided command.</p>
+<p> /minecraft:clear: A Mojang provided command.</p>
+<p> /minecraft:enchant: A Mojang provided command.</p>
+<p> /minecraft:gamemode: A Mojang provided command.</p>
+<p> /minecraft:give: A Mojang provided command.</p>
+<p> /minecraft:help: A Mojang provided command.</p>
+<p> /minecraft:item: A Mojang provided command.</p>
+<p> /minecraft:kick: A Mojang provided command.</p>
+<p> /minecraft:kill: A Mojang provided command.</p>
+<p> /minecraft:list: A Mojang provided command.</p>
+<p> /minecraft:locate: A Mojang provided command.</p>
+<p> /minecraft:me: A Mojang provided command.</p>
+<p> /minecraft:msg: A Mojang provided command.</p>
+<p> /minecraft:pardon: A Mojang provided command.</p>
+<p> /minecraft:recipe: A Mojang provided command.</p>
+<p> /minecraft:reload: A Mojang provided command.</p>
+<p> /minecraft:return: A Mojang provided command.</p>
+<p> /minecraft:teleport: A Mojang provided command.</p>
+<p> /minecraft:tell: A Mojang provided command.</p>
+<p> /minecraft:time: A Mojang provided command.</p>
+<p> /minecraft:tm: A Mojang provided command.</p>
+<p> /minecraft:tp: A Mojang provided command.</p>
+<p> /minecraft:w: A Mojang provided command.</p>
+<p> /minecraft:weather: A Mojang provided command.</p>
+<p> /minecraft:xp: A Mojang provided command.</p>
+<p> /minepacks:clearinventory: 
+</p>
+<p> /minetopiavehicles: 
+</p>
+<p> /more: Fills the item stack in hand to specified amount, or to
+maximum size if none is specified.</p>
+<p> /motd: Views the Message Of The Day.</p>
+<p> /msg: Sends a private message to the specified player.</p>
+<p> /msgtoggle: Blocks receiving all private messages.</p>
+<p> /mspt: View server tick times</p>
+<p> /mute: Mutes or unmutes a player.</p>
+<p> /mutechat: Mutes the server chat preventing players from talking
+in chat.</p>
+<p> /mv: Generic Multiverse Command</p>
+<p> /mvanchors: Creating and removing Anchors command</p>
+<p> /mvcheck: Validate your multiverse settings command</p>
+<p> /mvclone: World clone command</p>
+<p> /mvconfig: Configuration command</p>
+<p> /mvconfirm: Confirms sensitive decisions like deleting a world.</p>
+<p> /mvcoord: Display World, Coordinates, Direction &amp; Compression
+for a world.</p>
+<p> /mvcreate: World create command</p>
+<p> /mvdebug: Turns on debugging.</p>
+<p> /mvdelete: Delete world from server folders command</p>
+<p> /mvenv: Tells the user all possible environment types.</p>
+<p> /mvgamerule: Sets a gamerule.</p>
+<p> /mvgamerules: Lists the gamerules</p>
+<p> /mvgenerators: Displays all found world generators.</p>
+<p> /mvhelp: Displays the Multiverse Help.</p>
+<p> /mvimport: World import command</p>
+<p> /mvinfo: Gets world info.</p>
+<p> /mvlist: Print list of loaded Worlds</p>
+<p> /mvload: Loads a world into Multiverse.</p>
+<p> /mvmadd: Modify the settings of an existing world</p>
+<p> /mvmclear: Modify the settings of an existing world</p>
+<p> /mvmodify: Modify the settings of an existing world</p>
+<p> /mvmremove: Modify the settings of an existing world</p>
+<p> /mvmset: Modify the settings of an existing world</p>
+<p> /mvpurge: Purge the targetted world of creatures.</p>
+<p> /mvregen: Regenerates a world Multiverse already knows about.</p>
+<p> /mvreload: Reload Configuration files.</p>
+<p> /mvremove: Remove world from multiverse command</p>
+<p> /mvscript: Runs a script from the Multiverse scripts directory.</p>
+<p> /mvsetspawn: Set the spawn area for a particular world</p>
+<p> /mvsilent: Reduces startup messages</p>
+<p> /mvspawn: Teleport to the spawn area</p>
+<p> /mvtp: Command to teleport between Worlds</p>
+<p> /mvunload: World unload command</p>
+<p> /mvversion: Prints out version info.</p>
+<p> /mvwho: Display online users per world.</p>
+<p> /navwand: Navigation wand tool</p>
+<p> /near: Lists the players near by or around a player.</p>
+<p> /nick: Change your nickname or that of another player.</p>
+<p> /none: Unbind a bound tool from your current item</p>
+<p> /npc: Basic commands for all NPC-related things</p>
+<p> /nuke: May death rain upon them.</p>
+<p> /op: A Mojang provided command.</p>
+<p> /packet: Add or remove a simple packet listener.</p>
+<p> /packetlog: Logs hex representations of packets to a file or
+console</p>
+<p> /paper: Paper related commands</p>
+<p> /pardon-ip: A Mojang provided command.</p>
+<p> /particle: A Mojang provided command.</p>
+<p> /pay: Pays another player from your balance.</p>
+<p> /payconfirmtoggle: Toggles whether you are prompted to confirm
+payments.</p>
+<p> /paytoggle: Toggles whether you are accepting payments.</p>
+<p> /perf: A Mojang provided command.</p>
+<p> /perworldchat: Allow players to see what you type in chat in
+every world.</p>
+<p> /ping: Pong!</p>
+<p> /place: A Mojang provided command.</p>
+<p> /placeholderapi: PlaceholderAPI Command</p>
+<p> /playsound: A Mojang provided command.</p>
+<p> /playtime: Shows a player's time played in game</p>
+<p> /plugins: Gets a list of plugins running on the server</p>
+<p> /potion: Adds custom potion effects to a potion.</p>
+<p> /powertool: Assigns a command to the item in hand.</p>
+<p> /powertooltoggle: Enables or disables all current powertools.</p>
+<p> /primary: Set the right click brush</p>
+<p> /protocol: Performs administrative tasks regarding ProtocolLib.</p>
+<p> /ptime: Adjust player's client time. Add @ prefix to fix.</p>
+<p> /pumpkins: Generate pumpkin patches</p>
+<p> /pweather: Adjust a player's weather</p>
+<p> /r: Quickly reply to the last player to message you.</p>
+<p> /random: A Mojang provided command.</p>
+<p> /range: Set the brush range</p>
+<p> /realname: Displays the username of a user based on nick.</p>
+<p> /recipe: Displays how to craft items.</p>
+<p> /redo: Redoes the last action (from history)</p>
+<p> /region: Region management commands</p>
+<p> /register: Set a password for your account.</p>
+<p> /reload: Reloads the server configuration and plugins</p>
+<p> /remove: Remove all entities of a type</p>
+<p> /removeabove: Remove blocks above your head.</p>
+<p> /removebelow: Remove blocks below you.</p>
+<p> /removenear: Remove blocks near you.</p>
+<p> /renamehome: Renames a home.</p>
+<p> /repair: Repairs the durability of one or all items.</p>
+<p> /repl: Block replacer tool</p>
+<p> /replacenear: Replace nearby blocks</p>
+<p> /reply: Quickly reply to the last player to message you.</p>
+<p> /rest: Rests you or the given player.</p>
+<p> /restart: Restarts the server</p>
+<p> /restore: Restore the selection from a snapshot</p>
+<p> /ride: A Mojang provided command.</p>
+<p> /rtoggle: Change whether the recipient of the reply is last
+recipient or last sender</p>
+<p> /rules: Views the server rules.</p>
+<p> /save-all: A Mojang provided command.</p>
+<p> /save-off: A Mojang provided command.</p>
+<p> /save-on: A Mojang provided command.</p>
+<p> /savedisguise: Save a custom disguise to disguises.yml</p>
+<p> /say: A Mojang provided command.</p>
+<p> /schedule: A Mojang provided command.</p>
+<p> /schematic: Schematic commands for saving/loading areas</p>
+<p> /scoreboard: A Mojang provided command.</p>
+<p> /script: Scripting commands</p>
+<p> /scroll: Toggle between different target modes</p>
+<p> /searchitem: Search for an item</p>
+<p> /secondary: Set the left click brush</p>
+<p> /seed: A Mojang provided command.</p>
+<p> /seen: Shows the last logout time of a player.</p>
+<p> /sell: Sells the item currently in your hand.</p>
+<p> /selwand: Selection wand tool</p>
+<p> /serverlist: Show list of commands</p>
+<p> /setblock: A Mojang provided command.</p>
+<p> /sethome: Set your home to your current location.</p>
+<p> /setidletimeout: A Mojang provided command.</p>
+<p> /setjail: Creates a jail where you specified named [jailname].</p>
+<p> /settpr: Set the random teleport location and parameters.</p>
+<p> /setwarp: Creates a new warp.</p>
+<p> /setworldspawn: A Mojang provided command.</p>
+<p> /setworth: Set the sell value of an item.</p>
+<p> /shopkeeper: Base for all shopkeeper commands.</p>
+<p> /showkit: Show contents of a kit.</p>
+<p> /size: Set the brush size</p>
+<p> /skin: Changes your own skin.</p>
+<p> /skins: Opens the skins GUI.</p>
+<p> /skript: Skript's main command. Type '/skript help' for more
+information.</p>
+<p> /skript:bankomat: 
+</p>
+<p> /skript:clearitems: 
+</p>
+<p> /skript:egg: 
+</p>
+<p> /skript:event: 
+</p>
+<p> /skript:jsontext: 
+</p>
+<p> /skript:lox: 
+</p>
+<p> /skript:menutp: 
+</p>
+<p> /skript:musorka: 
+</p>
+<p> /skript:nightv: 
+</p>
+<p> /skript:reloadd: 
+</p>
+<p> /skript:site: 
+</p>
+<p> /skript:smyv: 
+</p>
+<p> /skript:spawn: 
+</p>
+<p> /skript:stopp: 
+</p>
+<p> /skript:tpmenu: 
+</p>
+<p> /skull: Set the owner of a player skull</p>
+<p> /slay: [player] - Slay a player</p>
+<p> /smask: Set the brush source mask</p>
+<p> /smithingtable: Opens up a smithing table.</p>
+<p> /snapshot: Snapshot commands for restoring backups</p>
+<p> /snow: Simulates snow</p>
+<p> /socialspy: Toggles if you can see msg/mail commands in chat.</p>
+<p> /spawner: Change the mob type of a spawner.</p>
+<p> /spawnmob: Spawns a mob.</p>
+<p> /spawnpoint: A Mojang provided command.</p>
+<p> /spectate: A Mojang provided command.</p>
+<p> /speed: Change your speed limits.</p>
+<p> /spigot: Spigot related commands</p>
+<p> /spreadplayers: A Mojang provided command.</p>
+<p> /sr: Admin commands for SkinsRestorer.</p>
+<p> /stack: Stack items</p>
+<p> /stacker: Block stacker tool</p>
+<p> /staff: Shows a list of all the staff members online.</p>
+<p> /staffchat: Talk secretly to other staff members online.</p>
+<p> /stonecutter: Opens up a stonecutter.</p>
+<p> /stop: A Mojang provided command.</p>
+<p> /stopfire: [&lt;world&gt;] - Disables all fire spread temporarily</p>
+<p> /stopsound: A Mojang provided command.</p>
+<p> /sudo: Make another user perform a command.</p>
+<p> /suicide: Causes you to perish.</p>
+<p> /summon: A Mojang provided command.</p>
+<p> /superpickaxe: Super-pickaxe commands</p>
+<p> /tag: A Mojang provided command.</p>
+<p> /target: Toggle between different target modes</p>
+<p> /targetoffset: Set the targeting mask</p>
+<p> /team: A Mojang provided command.</p>
+<p> /teammsg: A Mojang provided command.</p>
+<p> /tellraw: A Mojang provided command.</p>
+<p> /tempban: Temporary ban a user.</p>
+<p> /tempbanip: Temporarily ban an IP Address.</p>
+<p> /template: Template commands</p>
+<p> /thaw: Thaws the area</p>
+<p> /thru: Pass through walls</p>
+<p> /thunder: Enable/disable thunder.</p>
+<p> /time: Display/Change the world time. Defaults to current world.</p>
+<p> /timings: Manages Spigot Timings data to see performance of the
+server.</p>
+<p> /title: A Mojang provided command.</p>
+<p> /togglechat: Blocks a player from receiving chat messages.</p>
+<p> /toggleeditwand: Remind the user that the wand is now a tool and
+can be unbound with /tool none.</p>
+<p> /togglejail: Jails/Unjails a player, TPs them to the jail
+specified.</p>
+<p> /togglementions: Blocks players from receiving mention
+notifications.</p>
+<p> /toggleplace: Switch between your position and pos1 for placement</p>
+<p> /togglepm: Blocks players from sending private messages to you.</p>
+<p> /top: Teleport to the highest block at your current position.</p>
+<p> /tp: Teleport to a player.</p>
+<p> /tpa: Request to teleport to the specified player.</p>
+<p> /tpaall: Requests all players online to teleport to you.</p>
+<p> /tpacancel: Cancel all outstanding teleport requests. Specify
+[player] to cancel requests with them.</p>
+<p> /tpaccept: Accepts teleport requests.</p>
+<p> /tpahere: Request that the specified player teleport to you.</p>
+<p> /tpall: Teleport all online players to another player.</p>
+<p> /tpauto: Automatically accept teleportation requests.</p>
+<p> /tpdeny: Rejects teleport requests.</p>
+<p> /tphere: Teleport a player to you.</p>
+<p> /tpo: Teleport override for tptoggle.</p>
+<p> /tpoffline: Teleport to a player's last known logout location</p>
+<p> /tpohere: Teleport here override for tptoggle.</p>
+<p> /tppos: Teleport to coordinates.</p>
+<p> /tpr: Teleport randomly.</p>
+<p> /tps: Gets the current ticks per second for the server</p>
+<p> /tptoggle: Blocks all forms of teleportation.</p>
+<p> /tracemask: Set the mask used to stop tool traces</p>
+<p> /trait: Trait commands</p>
+<p> /traitc: Configures traits</p>
+<p> /transform: Set the brush transform</p>
+<p> /tree: Tree generator tool</p>
+<p> /trigger: A Mojang provided command.</p>
+<p> /unban: Unbans the specified player.</p>
+<p> /unbanip: Unbans the specified IP address.</p>
+<p> /undisguise: Undisguise yourself.</p>
+<p> /undisguiseentity: Undisguise an entity.</p>
+<p> /undisguiseplayer: Undisguise a player.</p>
+<p> /undisguiseradius: Undisguise all entities within a radius.</p>
+<p> /undo: Undoes the last action (from history)</p>
+<p> /ungod: [player] - Disable godmode on a player</p>
+<p> /unlimited: Allows the unlimited placing of items.</p>
+<p> /unregister: Unregister your account.</p>
+<p> /unstuck: Escape from being stuck inside a block</p>
+<p> /up: Go upwards some distance</p>
+<p> /vanish: Hide yourself from other players.</p>
+<p> /vault-convert: Converts all data in economy1 and dumps it into
+economy2</p>
+<p> /vault-info: Displays information about Vault</p>
+<p> /venturacalendar: Base command</p>
+<p> /version: Gets the version of this server including any plugins
+in use</p>
+<p> /warning: Sends a warning message to the entire server.</p>
+<p> /warp: List all warps or warp to the specified location.</p>
+<p> /warpinfo: Finds location information for a specified warp.</p>
+<p> /waypoint: Waypoint commands</p>
+<p> /weather: Sets the weather.</p>
+<p> /whitelist: A Mojang provided command.</p>
+<p> /whois: Determine the username behind a nickname.</p>
+<p> /workbench: Opens up a workbench.</p>
+<p> /world: Switch between worlds.</p>
+<p> /worldborder: A Mojang provided command.</p>
+<p> /worldedit: WorldEdit commands</p>
+<p> /worldguard: WorldGuard commands</p>
+<p> /worth: Calculates the worth of items in hand or as specified.</p>
+<p><a href="./index.html">
+	<button class="button">Назад</button>
+</a>
+</p>
+</body>
+</html>
