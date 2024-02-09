@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.button {
+                background-color: #008CBA; /* Green */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+              }
+			  @keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+	</style>
+	 
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>About</title>
+	<div>
+		<div class="wave"></div>
+		<div class="wave"></div>
+		<div class="wave"></div>
+	 </div>
+</head>
+<body lang="en-GB" dir="ltr"><h1>Про 25566:</h1>
+<p>Сервер был основан 24 мая 2023 года.</p>
+<p>Благодаря тому, что 25565 уже был не
+интересен и хотелось чего-то, мы решили
+перейти на новый сервер.</p>
+<p>Сначала было выживание в деревне,
+затем постепенно на сервере стали
+появляться постройки.</p>
+<p>На сервер постепенно добавлялись
+плагины.</p>
+<p>Раньше, у 25565, для соединения использовался
+Hamachi, каждые 5 минут программа крешилась,
+в скоре это нам надоело, и мы</p>
+<p>перешли на ZeroTier.</p>
+<p>На данный момент карта мира весит 10.6
+гБ</p>
+<p>У сервера есть карта но не факт что
+она работает: <a href="http://10.147.19.92:8123/"><font color="#ffffff"><span style="background: #0000ee">Карта
+для игроков</span></font></a></p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+<br/>
+
+</p>
+</body>
+
+</html>
