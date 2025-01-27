@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Город Блин - Прокладка маршрута</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1>Город Блин и деревня Алеши - Прокладка маршрута</h1>
+
+    <button class="btn btn-primary" data-toggle="modal" data-target="#routeModal">Прокладка маршрута</button>
+
+    <!-- Модальное окно для прокладки маршрута -->
+    <div class="modal fade" id="routeModal" tabindex="-1" role="dialog" aria-labelledby="routeModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="routeModalLabel">Выберите маршрут</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="startStreetSelect">Начальная улица:</label>
+                        <select class="form-control" id="startStreetSelect">
+                            <option value="">--Выберите улицу--</option>
+                            <option value="Барбарышиха">Ул. Барбарышиха</option>
+                            <option value="Древесный переулок">Древесный переулок</option>
+                            <option value="Майская улица">Майская улица</option>
+                            <option value="Свекольная улица">Свекольная улица</option>
+                            <option value="Ореховая улица">Ореховая улица (Деревня Алеши)</option>
+                            <option value="Кленовая улица">Кленовая улица (Деревня Алеши)</option>
+                            <option value="Березовая улица">Березовая улица (Деревня Алеши)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="startHouseSection" style="display:none;">
+                        <label for="startHouseSelect">Дом:</label>
+                        <select class="form-control" id="startHouseSelect"></select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="endStreetSelect">Конечная улица:</label>
+                        <select class="form-control" id="endStreetSelect">
+                            <option value="">--Выберите улицу--</option>
+                            <option value="Барбарышиха">Ул. Барбарышиха</option>
+                            <option value="Древесный переулок">Древесный переулок</option>
+                            <option value="Майская улица">Майская улица</option>
+                            <option value="Свекольная улица">Свекольная улица</option>
+                            <option value="Ореховая улица">Ореховая улица (Деревня Алеши)</option>
+                            <option value="Кленовая улица">Кленовая улица (Деревня Алеши)</option>
+                            <option value="Березовая улица">Березовая улица (Деревня Алеши)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="endHouseSection" style="display:none;">
+                        <label for="endHouseSelect">Дом:</label>
+                        <select class="form-control" id="endHouseSelect"></select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    <button class="btn btn-primary" id="routeButton" style="display:none;">Показать маршрут</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-3" id="routeInfo" style="display:none;"></div>
+</div>
+
+<script>
+    const houses = {
+        "Барбарышиха": [1, 2, 4, 5, 3, 7, 6, 8, 9, 10, 19, 11, 13, 14, 15, 16],
+        "Древесный переулок": [1, 2],
+        "Майская улица": [5, 4, 3, 7, 1, 2, 12, 9, "9 корпус 2", 10, "объект 11"],
+        "Свекольная улица": [1, 2, 3, 4],
+        "Ореховая улица": [1, 2, 3, 4],
+        "Кленовая улица": [1, 2, 3, 4, 5, 6],
+        "Березовая улица": [1, 2, 3]
+    };
+
+    const neighbors = {
+        "Барбарышиха": ["Древесный переулок", "Майская улица"],
+        "Древесный переулок": ["Барбарышиха"],
+        "Майская улица": ["Барбарышиха", "Ореховая улица", "Свекольная улица"],
+        "Свекольная улица": ["Майская улица"],
+        "Ореховая улица": ["Майская улица", "Кленовая улица"],
+        "Кленовая улица": ["Ореховая улица", "Березовая улица"],
+        "Березовая улица": ["Кленовая улица"]
+    };
+
+    // Обработка выбора начальной улицы
+    $("#startStreetSelect").change(function() {
+        const selectedStreet = $(this).val();
+        const houseSelect = $("#startHouseSelect");
+        houseSelect.empty();
+
+        if (selectedStreet) {
+            houses[selectedStreet].forEach(house => {
+                houseSelect.append(`<option value="${house}">${house}</option>`);
+            });
+            $("#startHouseSection").show();
+            $("#routeButton").show();
+        } else {
+            $("#startHouseSection").hide();
+            $("#routeButton").hide();
+        }
+    });
+
+    // Обработка выбора конечной улицы
+    $("#endStreetSelect").change(function() {
+        const selectedStreet = $(this).val();
+        const houseSelect = $("#endHouseSelect");
+        houseSelect.empty();
+
+        if (selectedStreet) {
+            houses[selectedStreet].forEach(house => {
+                houseSelect.append(`<option value="${house}">${house}</option>`);
+            });
+            $("#endHouseSection").show();
+        } else {
+            $("#endHouseSection").hide();
+        }
+    });
+
+    $("#routeButton").click(function() {
+        const startStreet = $("#startStreetSelect").val();
+        const startHouse = $("#startHouseSelect").val();
+        const endStreet = $("#endStreetSelect").val();
+        const endHouse = $("#endHouseSelect").val();
+
+        if (startStreet && endStreet) {
+            let routeMessage = `Маршрут: ${startStreet}, дом ${startHouse} -> ${endStreet}, дом ${endHouse}.<br>`;
+
+            if (startStreet === endStreet) {
+                // Если улицы одинаковые, краткий маршрут
+                routeMessage += "Вы находитесь на одной улице.";
+            } else {
+                // Если не одинаковые, ищем маршрут через соседние улицы
+                const path = findRoute(startStreet, endStreet);
+                if (path.length === 0) {
+                    routeMessage += "Не удалось найти маршрут.";
+                } else {
+                    routeMessage += `Полный маршрут: ${path.join(' -> ')}`;
+                }
+            }
+
+            $("#routeInfo").html(routeMessage).show();
+        }
+        $('#routeModal').modal('hide'); // Закрываем модальное окно после выбора
+    });
+
+    function findRoute(start, end) {
+        const queue = [[start]];
+        const visited = new Set();
+
+        while (queue.length > 0) {
+            const currentPath = queue.shift();
+            const currentStreet = currentPath[currentPath.length - 1];
+
+            if (currentStreet === end) {
+                return currentPath; // Возвращаем найденный путь
+            }
+
+            visited.add(currentStreet);
+
+            for (const neighbor of neighbors[currentStreet]) {
+                if (!visited.has(neighbor)) {
+                    queue.push([...currentPath, neighbor]);
+                }
+            }
+        }
+
+        return []; // Если маршрут не найден
+    }
+</script>
+
+</body>
+</html>
